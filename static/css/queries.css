@@ -1,0 +1,645 @@
+@media (min-width: 90.625em) {
+  .hide-mobil {
+    display: none;
+  }
+  .desctop-hide {
+    display: none;
+  }
+  
+  .desctop-show {
+    display: grid;
+  }
+
+}
+
+
+/**************************/
+/* BELOW 1450px (Small desctop) */
+/**************************/
+
+@media (max-width: 90.625em) {
+  .hero-content {
+    top: -10.25rem;
+  }
+
+  .hero-logo {
+    font-size: 11rem;
+  }
+
+  .hero-content-p {
+    font-size: 5.5rem;
+  }
+
+  .appointment-link {
+    line-height: 6.75rem;
+    width: 44.12rem;
+    height: 6.75rem;
+    font-size: 2rem;
+  }
+}
+
+/**************************/
+/* BELOW 944px (Tablets) */
+/**************************/
+
+@media (max-width: 67.5em) {
+  html {
+    /* 8px / 16px = 0.5 = 50% */
+    font-size: 50%;
+  }
+
+  .red-mobile {
+    color: #ff002e;
+  }
+  .container {
+    /* 1140px */
+    /* max-width: 120rem; */
+    padding: 0 4.5rem;
+    margin: 0 auto;
+  }
+
+  .navigation,
+  .price-btns,
+  .mobile-footer-policy,
+  .hide-on-tablet,
+  .hide-mobil {
+    display: none;
+  }
+
+  .hide-important {
+    display: none !important;
+  }
+
+  .show-on-tablet {
+    display: block;
+  }
+
+  /**************************/
+  /* MENU SECTION */
+  /**************************/
+
+  .header {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+
+  .navigation {
+    width: 38.5%;
+  }
+
+  .menu-nav {
+    justify-content: flex-start;
+    /* width: 30%; */
+  }
+
+  .sidenav {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    top: 0;
+    height: auto;
+    padding-right: 2.85rem;
+    padding-left: 2.85rem;
+    padding-top: 0.85rem;
+    padding-bottom: 7rem;
+    background-color: #513a28;
+    color: #ececec;
+    font-weight: 500;
+    font-size: 3rem;
+    line-height: 3.5rem;
+    overflow-x: hidden;
+    transition: opacity 0.3s, width 0.8s;
+    -webkit-transition: opacity 0.3s, width 0.8s;
+    -moz-transition: opacity 0.3s, width 0.8s;
+    -ms-transition: opacity 0.3s, width 0.8s;
+    -o-transition: opacity 0.3s, width 0.8s;
+}
+
+  .sidenav-header {
+    justify-content: space-between;
+    align-items: center;
+    height: 7rem;
+    border-bottom: 1px solid #ececec;
+  }
+
+  .sidenav-nav {
+    margin-top: 2rem;
+    flex-direction: column;
+    gap: 3.8rem;
+    align-items: center;
+  }
+
+  .sidenav-contacts {
+    flex-direction: column;
+    margin-top: 4rem;
+    gap: 3.8rem;
+    align-items: center;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+  }
+
+  .openNav {
+    position: absolute;
+    right: 4.5rem;
+  }
+
+  /* hero  section */
+
+  .hero-img {
+    height: 70vh;
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .hero-img1 {
+    background-position: 90%;
+  }
+
+  .hero-content {
+    top: -24.25rem;
+  }
+
+  .appointment-link {
+    font-size: 2.5rem;
+  }
+
+  .grid {
+    display: grid;
+    column-gap: 3.5rem;
+    row-gap: 3.5rem;
+    margin-bottom: 3.6rem;
+  }
+
+  .grid--3-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .swiper-button-prev {
+    top: 45% !important;
+    
+    background-image: url(../img/chevron_left.svg) !important;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 3.5rem !important;
+  }
+
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    display: none;
+  }
+
+  .swiper-button-next {
+    top: 45% !important;
+    background-image: url(../img/chevron_right.svg) !important;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 3.5rem !important;
+  }
+
+  .tablet-swiper-profi {
+    padding-left: 4.5rem;
+  }
+
+  .services-descr {
+    margin-top: 2rem;
+  }
+  /**************************/
+  /* PRICE SECTION */
+  /**************************/
+  .dropdown {
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .dropbtn {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.5rem;
+  }
+
+  .dropdown-content {
+    width: 90vw;
+    flex-direction: column;
+    position: absolute;
+    z-index: 3;
+    bottom: -11.5rem;
+    left: 0;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.5rem;
+    line-height: 3rem;
+    background-color: #e9deca;
+    padding: 1.5rem;
+    gap: 1.5rem;
+    text-align: center;
+    border: 1px solid #786352;
+    border-radius: 10px;
+  }
+
+  #moreImg {
+    width: 20px;
+  }
+
+  .price-table {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+  }
+
+  .nails-recommedations {
+    margin-bottom: 5rem;
+  }
+
+  
+
+  /**************************/
+  /* GALLERY SECTION */
+  /**************************/
+
+  .atmosphere-img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .bloc2 {
+    transform: translateX(2000px);
+    -webkit-transform: translateX(2000px);
+    -moz-transform: translateX(2000px);
+    -ms-transform: translateX(2000px);
+    -o-transform: translateX(2000px);
+  }
+  .bloc3,
+  .bloc1 {
+    transform: translateX(-2000px);
+    -webkit-transform: translateX(-2000px);
+    -moz-transform: translateX(-2000px);
+    -ms-transform: translateX(-2000px);
+    -o-transform: translateX(-2000px);
+  }
+
+  .gallery-header {
+    margin-bottom: 4.5rem;
+  }
+
+
+  /* about us */
+
+  .atmospere-section {
+    overflow-x: hidden;
+  }
+
+}
+
+/**************************/
+/* BELOW 544px (Phones) */
+/**************************/
+
+@media (max-width: 34em) {
+  .red-mobile {
+    color: #ff002e;
+  }
+
+  /* .project-desctop-section,
+  .team-desctop,
+  .prices-desctop {
+    display: block;
+  } */
+
+  .navigation,
+  .price-btns,
+  .footer-policy,
+  .show-on-tablet,
+  .hide-mobil {
+    display: none;
+  }
+
+  .hide-on-tablet {
+    display: flex;
+  }
+
+  .hero-img {
+    height: 80vh;
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .hero-img1 {
+    background-position: 90%;
+  }
+  /* .grid--2-cols {
+    grid-template-columns: 1fr;
+  } */
+
+  .grid--3-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .container {
+    padding: 0 2.2rem;
+  }
+
+  .grid {
+    /* display: grid; */
+    column-gap: 3.5rem;
+    row-gap: 3.5rem;
+    margin-bottom: 3.6rem;
+  }
+
+  .logo-block {
+    padding: 0;
+  }
+
+  .hero-logo {
+    font-size: 7rem;
+  }
+
+  .hero-content-p {
+    font-size: 4.5rem;
+    text-align: center;
+  }
+
+  .appointment-link {
+    font-size: 2.5rem;
+    width: 90vw;
+  }
+
+  .h2 {
+    padding-top: 5.25rem;
+    font-size: 3.3rem;
+  }
+
+  /* sidenav */
+
+  /* sidenav */
+
+  .sidenav {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    top: 0;
+    height: 100vh;
+    padding-right: 2.85rem;
+    padding-left: 2.85rem;
+    padding-top: 0.85rem;
+    background-color: #513a28;
+    color: #ececec;
+    font-weight: 500;
+    font-size: 3rem;
+    line-height: 3.5rem;
+    overflow-x: hidden;
+    transition: opacity 0.3s, width 0.8s;
+    -webkit-transition: opacity 0.3s, width 0.8s;
+    -moz-transition: opacity 0.3s, width 0.8s;
+    -ms-transition: opacity 0.3s, width 0.8s;
+    -o-transition: opacity 0.3s, width 0.8s;
+}
+
+  .sidenav-header {
+    justify-content: space-between;
+    align-items: center;
+    height: 7rem;
+    border-bottom: 1px solid #ececec;
+  }
+
+  .sidenav-nav {
+    margin-top: 2rem;
+    flex-direction: column;
+    gap: 3.8rem;
+    align-items: center;
+  }
+
+  .sidenav-contacts {
+    flex-direction: column;
+    margin-top: 4rem;
+    gap: 3.8rem;
+    align-items: center;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+  }
+
+  /* service */
+
+  .service-description {
+    font-size: 2rem;
+    height: 5.5rem;
+    line-height: 5.5rem;
+  }
+
+  /* price */
+
+  .price-table {
+    padding-left: 0;
+  }
+
+  .price-block {
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    margin-top: 0.5rem;
+  }
+
+  .price-block > p {
+    margin-top: 1rem;
+  }
+
+  .price-big {
+    font-size: 2.2rem;
+    margin-top: 1.8rem;
+  }
+
+  .dropdown {
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .dropbtn {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.5rem;
+  }
+
+  .dropdown-content {
+    width: 90vw;
+    flex-direction: column;
+    position: absolute;
+    z-index: 3;
+    bottom: -11.5rem;
+    left: 0;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.5rem;
+    line-height: 3rem;
+    background-color: #e9deca;
+    padding: 1.5rem;
+    gap: 1.5rem;
+    text-align: center;
+    border: 1px solid #786352;
+    border-radius: 10px;
+  }
+
+  #moreImg {
+    width: 20px;
+  }
+
+  .left {
+    width: 52.5%;
+  }
+  .price-small {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+    width: 65%;
+  }
+  .nails-recommedations {
+    flex-direction: column;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  .price-table {
+    margin-bottom: 2.5rem;
+  }
+  .nails-recomm-h {
+    text-align: center;
+    margin-top: 0;
+    color: #513a28;
+  }
+  .form {
+    width: 100%;
+  }
+
+  .thanks {
+    width: 90vw;
+  }
+  .logo-thanks {
+    font-size: 8.5rem;
+  }
+  /* footer */
+  .section-footer {
+    flex-direction: column;
+  }
+  .footer-container {
+    height: 9rem;
+  }
+
+  .menu-icons {
+    gap: 3.5rem;
+  }
+
+  .social-media-img {
+    width: 5rem;
+  }
+
+  .mobile-footer-policy {
+    text-align: center;
+    color: #291f16;
+    font-weight: 400;
+    font-size: 1.5rem;
+    margin-bottom: 5rem;
+  }
+
+  /* CONTACTS HTML */
+
+  .contacts-img-main {
+    height: 85vh;
+    width: 100vw;
+    background-size: 264% 97vh;
+    background-position: 47%;
+    background-repeat: no-repeat;
+    background-image: url(../img/location.jpg);
+  }
+
+  .adress-div {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .adress-mobile {
+    gap: 1rem;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+  }
+  .adress-mobile > img {
+    margin-top: 0.6rem;
+  }
+  .adress-text-mobile {
+    font-weight: 600;
+    font-size: 2.5rem;
+    line-height: 3rem;
+    color: #513a28;
+  }
+  .contacts-img-map {
+    height: 70vh;
+    width: 100vw;
+    background-size: cover;
+    background-position: center;
+    /* background-repeat: no-repeat; */
+    background-image: url(../img/map.jpg);
+  }
+
+  /* ABOUT US HTML */
+  .mobile-atmosphere {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .services-block-profi {
+    width: 80%;
+  }
+
+  .swiper-slide-profi {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 2rem;
+  }
+  .services-descr {
+    width: 80%;
+  }
+  .profi-description {
+    font-size: 2.5rem;
+  }
+
+  .tablet-swiper-profi {
+    padding-left: 0;
+  }
+
+  /* gallery html */
+
+  .gallery-header {
+    margin-top: 3rem;
+    position: relative;
+    height: 13.5rem;
+    margin-bottom: 3rem;
+    
+  }
+
+  .gallery-name {
+    width: 40%;
+    font-size: 1.5rem;
+  }
+
+  .gallery-name.active {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 2.8rem;
+    line-height: 3.2rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .swiper-slide-gallery {
+    /* width: 80% !important; */
+  }
+}

@@ -1,0 +1,188 @@
+/* 
+--- 01 TYPOGRAPHY SYSTEM
+
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Font weights
+Default: 400
+Medium: 500
+Semi-bold: 600
+Bold: 700
+
+- Line heights
+Default: 1
+
+02 COLORS
+
+'Black':  #080A09;
+Dark font: #1E0073
+Accent: #00FFFF;
+Menu-font:  #F2F2F2;
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+  }
+
+  a {
+    
+    color: inherit;
+  }
+  
+  html {
+    /* font-size: 10px; */
+  
+    /* 10px / 16px = 0.625 = 62.5% */
+    /* Percentage of user's browser font-size setting */
+    font-family: "Mulish"; 
+    font-size: 62.5%;
+    overflow-x: hidden;
+  }
+  
+  body {
+    font-family: Mulish;
+    line-height: 1;
+    letter-spacing: 0.01em;
+    font-weight: 400;
+    background-color: #E9DECA;
+    /* color: #ffffff; */
+  
+    /* Only works if there is nothing absolutely positioned in relation to body */
+    /* overflow-x: hidden; */
+  }
+
+  ul {
+    list-style-type: none;
+  }
+  
+
+input {
+  border: none;
+}
+
+  input:focus {
+    outline:none;
+}
+
+@font-face {
+  font-family: "Mulish";  
+  src: url("../fonts/Mulish/static/Mulish-Regular.ttf") format("truetype"); 
+  font-style: normal; 
+  font-weight: normal;
+  letter-spacing: 0.01em;
+
+}
+@font-face {
+  font-family: "Mulish Light";  
+  src: url("../fonts/Mulish/static/Mulish-Light.ttf") format("truetype"); 
+  font-style: normal; 
+  font-weight: 300;
+  letter-spacing: 0.01em;
+
+}
+@font-face {
+  font-family: "Mulish Bold";  
+  src: url("../fonts/Mulish/static/Mulish-ExtraBold.ttf") format("truetype"); 
+  font-style: normal; 
+  font-weight: bold;
+  letter-spacing: 0.01em;
+
+}
+
+@font-face {
+  font-family: "Cooper Black";  
+  src: url("../fonts/CooperBlack/CooperBlackRegular.ttf") format("truetype"); 
+  font-style: normal; 
+  font-weight: normal;
+}
+
+  /**************************/
+/* GENRAL REUSABLE COMPONENTS */
+/**************************/
+
+.container {
+  /* 1140px */
+  /* max-width: 120rem; */
+  padding: 0 13.8rem;
+  margin: 0 auto;
+}
+
+.container-mini {
+  padding: 0 42rem;
+  margin: 0 auto;
+}
+
+.bgr-img-cover {
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.grid {
+  display: grid;
+  column-gap: 7.5rem;
+  row-gap: 7.5rem;
+
+  /* margin-bottom: 9.6rem; */
+}
+
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.flex {
+  display: flex;
+}
+
+.logo-font {
+  font-family: 'Cooper Black';
+  color: #FF002E;
+  font-weight: 400;
+  text-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+}
+
+
+.h2 {
+  color: #513A28;
+  padding-top: 6.25rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  font-size: 4.25rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.h3 {
+  font-size: 2.5rem;
+  text-align: center;
+  letter-spacing: 0.01em;
+  font-weight: 400;
+}
+
+.red-text {
+  color: #FF002E;
+}
+
+.ta-center {
+  text-align: center;
+}
+
+.up {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+  
+}
+
+
+/*  */

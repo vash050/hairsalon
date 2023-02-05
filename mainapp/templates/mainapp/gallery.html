@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../../static/css/general.css" />
+    <link rel="stylesheet" href="../../../static/css/style.css" />
+    <link rel="stylesheet" href="../../../static/css/queries.css" />
+    <!-- file for green sock -->
+    <script src="../../../static/js/gsap.min.js"></script>
+    <!-- files for swiper -->
+    <link rel="stylesheet" href="../../../static/css/swiper.css" />
+    <script src="../../../static/js/swiper.js"></script>
+    <!-- file for jquery -->
+    <script src="../../../static/js/jquery.js"></script>
+    <!-- current js files -->
+    <script src="../../../static/js/sliderHero.js" defer></script>
+    <script src="../../../static/js/gsapCurrent.js" defer></script>
+    <script src="../../../static/js/priceShow.js" defer></script>
+    <script src="../../../static/js/sidebar.js" defer></script>
+    <title>BEAUTY Салон - контакты</title>
+  </head>
+  <body>
+    <header class="container flex header">
+      <nav class="navigation">
+        <ul class="flex menu-nav">
+          <li><a href="#"> Услуги</a></li>
+          <li><a href="#">Прайс</a></li>
+          <li><a href="about_us.html">О нас</a></li>
+        </ul>
+      </nav>
+      <a href="index.html" class="logo-block">
+        <p class="logo-font logo-menu">BEAUTY</p>
+        <p class="logo-menu-p">САЛОН КРАСОТЫ</p>
+      </a>
+      <nav class="navigation show-on-tablet">
+        <ul class="flex menu-nav">
+          <li class="hide-on-tablet"><a href="gallery.html">Галерея</a></li>
+          <li class="hide-on-tablet"><a href="contacts.html">Контакты</a></li>
+          <li class="flex menu-icons">
+            <a href="#"
+              ><img
+                class="social-media-img"
+                src="../../../static/img/telegram.svg"
+                alt="telegram"
+            /></a>
+            <a href="#"
+              ><img class="social-media-img" src="../../../static/img/vk.svg" alt="vkontakte"
+            /></a>
+          </li>
+        </ul>
+      </nav>
+      <img src="../../../static/img/menu.svg" alt="menu" id="openNav" class="openNav desctop-hide" />
+    </header>
+    <div id="mySidenav" class="sidenav desctop-hide">
+      <div class="flex sidenav-header">
+        <a href="index.html" class="logo-block">
+          <p class="logo-font logo-menu">BEAUTY</p>
+          <p class="logo-menu-p">САЛОН КРАСОТЫ</p>
+        </a>
+        <img
+          src="../../../static/img/close_red.svg"
+          alt="close"
+          id="closeNav"
+          class="closeNav"
+        />
+      </div>
+      <nav>
+        <ul class="flex sidenav-nav">
+          <li><a href="#"> Услуги</a></li>
+          <li><a href="#"> Прайс</a></li>
+          <li><a href="about_us.html"> О нас</a></li>
+          <li><a href="gallery.html"> Галерея</a></li>
+          <li><a href="contacts.html"> Контакты</a></li>
+        </ul>
+      </nav>
+      <div class="flex sidenav-contacts" id="mySidenavContacts">
+        <p class="ta-center">
+          г. Город, ул. <br />
+          Пушкина, д. 56
+        </p>
+        <p>+7(0000)00 00 00</p>
+        <div class="flex menu-icons">
+          <a href="#"
+            ><img
+              src="../../../static/img/telegram.svg"
+              class="social-media-img"
+              alt="telegram"
+          /></a>
+          <a href="#"
+            ><img src="../../../static/img/vk.svg" class="social-media-img" alt="vkontakte"
+          /></a>
+        </div>
+      </div>
+    </div>
+    <main class="gallery-section">
+      <div class="container flex gallery-header">
+        <a href="#" class="flex gallery-name">
+          Работы мастера<br />
+          Натальи
+          <img src="../../../static/img/Arrow-left.svg" alt="arrow" />
+        </a>
+        <div class="flex gallery-name active">
+          Работы мастера<br />
+          Анастасии
+        </div>
+        <a href="#" class="flex gallery-name">
+          Работы мастера<br />
+          Полины
+          <img src="../../../static/img/Arrow-right.svg" alt="arrow" />
+        </a>
+      </div>
+      <!-- <div class="container"> -->
+        <!-- Slider  -->
+        <div class="swiper swiper-gallery">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide swiper-slide-gallery">
+              <img
+                src="../../../static/img/work_a1.jpg"
+                class="gallery-img"
+                alt="Салон BEAUTY"
+              />
+              <p class="gallery-description">Описание работы</p>
+            </div>
+            <div class="swiper-slide swiper-slide-gallery">
+              <img
+                src="../../../static/img/work_a2.jpg"
+                class="gallery-img"
+                alt="Салон BEAUTY"
+              />
+              <p class="gallery-description">Описание работы</p>
+            </div>
+            <div class="swiper-slide swiper-slide-gallery">
+              <img
+                src="../../../static/img/work_a3.jpg"
+                class="gallery-img"
+                alt="Салон BEAUTY"
+              />
+              <p class="gallery-description">Описание работы</p>
+            </div>
+            <div class="swiper-slide swiper-slide-gallery">
+              <img
+                src="../../../static/img/work_a4.jpg"
+                class="gallery-img"
+                alt="Салон BEAUTY"
+              />
+              <p class="gallery-description">Описание работы</p>
+            </div>
+            <div class="swiper-slide swiper-slide-gallery">
+              <img
+                src="../../../static/img/work_a5.jpg"
+                class="gallery-img"
+                alt="Салон BEAUTY"
+              />
+              <p class="gallery-description">Описание работы</p>
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      <!-- </div> -->
+    </main>
+    <section class="flex form-section container">
+      <h2 class="h2 red-text">Записаться на услугу</h2>
+      <p class="nails-recomm-h ta-center">
+        Заполните форму ниже и мы свяжемся с вами для уточнения <br />информации
+        и консультации по наличию свободного времени
+      </p>
+
+      <form action="#" class="flex form">
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Имя"
+          class="input-form"
+        />
+
+        <input
+          type="tel"
+          name="phone"
+          id="phone"
+          placeholder="Телефон"
+          class="input-form"
+        />
+        <input
+          type="text"
+          name="messenger"
+          id="messenger"
+          placeholder="Мессенджер"
+          class="input-form"
+        />
+        <input
+          type="text"
+          name="service"
+          id="service"
+          placeholder="Желаемая услуга"
+          class="input-form"
+        />
+        <input
+          type="text"
+          name="datetime"
+          id="datetime"
+          placeholder="Дата и время"
+          class="input-form"
+        />
+
+        <input
+          type="text"
+          name="connection_type"
+          id="connection_type"
+          placeholder="Предпочтительный вид связи"
+          class="input-form"
+        />
+
+        <label for="policy" class="label-form">
+          <input type="checkbox" name="policy" id="policy" required />
+          <span
+            >Я подтверждаю согласие на обработку персональных данных в
+            соответствии с условиями
+            <span class="policy-span">Политики конфиденциальности</span></span
+          >
+        </label>
+
+        <button type="submit" class="button-form">Отправить</button>
+      </form>
+    </section>
+    <footer class="container">
+      <div class="section-footer flex">
+        <div class="flex footer-container">
+          <a href="index.html">
+            <p class="logo-font logo-menu">BEAUTY</p>
+            <p class="logo-menu-p">САЛОН КРАСОТЫ</p>
+          </a>
+          <a href="#" class="footer-policy">Политика конфиденциальности</a>
+
+          <div class="flex menu-icons">
+            <a href="#"
+              ><img
+                src="../../../static/img/telegram.svg"
+                class="social-media-img"
+                alt="telegram"
+            /></a>
+            <a href="#"
+              ><img src="../../../static/img/vk.svg" class="social-media-img" alt="vkontakte"
+            /></a>
+          </div>
+        </div>
+        <a href="#" class="mobile-footer-policy desctop-hide">Политика конфиденциальности</a>
+      </div>
+    </footer>
+  </body>
+</html>

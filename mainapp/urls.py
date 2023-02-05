@@ -22,4 +22,7 @@ app_name = 'mainapp'
 
 urlpatterns = [
     path('', mainapp.index, name='index'),
+    path('gallery', mainapp.gallery, name='gallery'),
+    path('about', mainapp.about, name='about'),
+    path('contacts', mainapp.contacts, name='contacts')
 ]

@@ -1,3 +1,7 @@
 from django.contrib import admin
 
-# Register your models here.
+from mainapp.models import Hall, CategoryService, Service
+
+admin.site.register(Hall)
+admin.site.register(CategoryService)
+admin.site.register(Service)

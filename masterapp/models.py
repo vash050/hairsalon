@@ -1,3 +1,69 @@
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
-# Create your models here.
+from mainapp.models import Service
+
+
+class Master(models.Model):
+    class Stuff(models.TextChoices):
+        CURRENT = 'CU', _('current employee')
+        VACATION = 'VA', _('vacation')
+        SICK = 'SI', _('sick leave')
+        DISMISSED = 'DI', _('dismissed')
+        STUDENT = 'ST', _('student')
+
+    user_id = models.ForeignKey(to='User', on_delete=models.CASCADE)
+    about_me = models.TextField
+    date_start_work = models.DateField
+    is_stuff = models.CharField(max_length=2, choices=Stuff.choices, default=Stuff.STUDENT)
+    date_create = models.DateField(auto_now_add=True)
+    date_update = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = 'мастер'
+        verbose_name_plural = 'мастера'
+
+
+class Profession(models.Model):
+    name = models.CharField(max_length=100)
+    short_description = models.TextField
+    full_description = models.TextField
+    is_active = models.BooleanField(default=True)
+
+    class Meta:
+        verbose_name = 'профессия'
+        verbose_name_plural = 'профессии'
+
+    def __str__(self):
+        return self.name
+
+
+class Dokument(models.Model):
+    master_id = models.ForeignKey(to=Master, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+    full_description = models.TextField
+    number_dok = models.CharField(max_length=100, blank=True)
+    who_issued = models.TextField(blank=True)
+    date_issued = models.DateField(blank=True)
+    date_create = models.DateField(auto_now_add=True)
+    date_update = models.DateTimeField(auto_now=True)
+    is_active = models.BooleanField(default=True)
+
+    class Meta:
+        verbose_name = 'документ'
+        verbose_name_plural = 'документы'
+
+
+class CompletedWork(models.Model):
+    master_id = models.ForeignKey(to=Master, on_delete=models.CASCADE)
+    photo = models.ImageField(blank=True)
+    short_description = models.TextField
+    full_description = models.TextField
+    service_id = models.ForeignKey(to=Service, on_delete=models.CASCADE)
+    date_create = models.DateField(auto_now_add=True)
+    date_update = models.DateTimeField(auto_now=True)
+    is_active = models.BooleanField(default=True)
+
+    class Meta:
+        verbose_name = 'выполненая работа'
+        verbose_name_plural = 'выполненые работы'

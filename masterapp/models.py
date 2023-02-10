@@ -67,3 +67,6 @@ class CompletedWork(models.Model):
     class Meta:
         verbose_name = 'выполненая работа'
         verbose_name_plural = 'выполненые работы'
+
+    def __str__(self):
+        return self.short_description

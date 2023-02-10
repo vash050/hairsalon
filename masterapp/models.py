@@ -56,7 +56,7 @@ class Dokument(models.Model):
 
 class CompletedWork(models.Model):
     master_id = models.ForeignKey(to=Master, on_delete=models.CASCADE)
-    photo = models.ImageField(blank=True)
+    photo = models.ImageField(upload_to='complete_works', blank=True)
     short_description = models.TextField(blank=True)
     full_description = models.TextField(blank=True)
     service_id = models.ForeignKey(to=Service, on_delete=models.CASCADE)

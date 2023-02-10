@@ -3,8 +3,8 @@ from django.db import models
 
 class Hall(models.Model):
     name = models.CharField(max_length=100)
-    short_description = models.TextField
-    full_description = models.TextField
+    short_description = models.TextField(blank=True)
+    full_description = models.TextField(blank=True)
     is_active = models.BooleanField(default=True)
 
     class Meta:
@@ -17,8 +17,8 @@ class Hall(models.Model):
 
 class CategoryService(models.Model):
     name = models.CharField(max_length=100)
-    short_description = models.TextField
-    full_description = models.TextField
+    short_description = models.TextField(blank=True)
+    full_description = models.TextField(blank=True)
     hall = models.ForeignKey(to=Hall, on_delete=models.CASCADE)
     is_active = models.BooleanField(default=True)
 
@@ -32,11 +32,11 @@ class CategoryService(models.Model):
 
 class Service(models.Model):
     name = models.CharField(max_length=100)
-    short_description = models.TextField
-    full_description = models.TextField
+    short_description = models.TextField(blank=True)
+    full_description = models.TextField(blank=True)
     category_service = models.ForeignKey(to=CategoryService, on_delete=models.CASCADE)
     price = models.DecimalField(max_digits=8, decimal_places=2, default=0.00)
-    duration = models.IntegerField  # время на оказание услуги в минутах
+    duration = models.IntegerField(null=True)  # время на оказание услуги в минутах
     is_active = models.BooleanField(default=True)
 
     class Meta:

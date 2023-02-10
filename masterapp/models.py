@@ -12,9 +12,9 @@ class Master(models.Model):
         DISMISSED = 'DI', _('dismissed')
         STUDENT = 'ST', _('student')
 
-    user_id = models.ForeignKey(to='User', on_delete=models.CASCADE)
-    about_me = models.TextField
-    date_start_work = models.DateField
+    # user_id = models.ForeignKey(to='User', on_delete=models.CASCADE)
+    about_me = models.TextField(blank=True)
+    date_start_work = models.DateField(null=True)
     is_stuff = models.CharField(max_length=2, choices=Stuff.choices, default=Stuff.STUDENT)
     date_create = models.DateField(auto_now_add=True)
     date_update = models.DateTimeField(auto_now=True)
@@ -26,8 +26,8 @@ class Master(models.Model):
 
 class Profession(models.Model):
     name = models.CharField(max_length=100)
-    short_description = models.TextField
-    full_description = models.TextField
+    short_description = models.TextField(blank=True)
+    full_description = models.TextField(blank=True)
     is_active = models.BooleanField(default=True)
 
     class Meta:
@@ -41,7 +41,7 @@ class Profession(models.Model):
 class Dokument(models.Model):
     master_id = models.ForeignKey(to=Master, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
-    full_description = models.TextField
+    full_description = models.TextField(blank=True)
     number_dok = models.CharField(max_length=100, blank=True)
     who_issued = models.TextField(blank=True)
     date_issued = models.DateField(blank=True)
@@ -57,8 +57,8 @@ class Dokument(models.Model):
 class CompletedWork(models.Model):
     master_id = models.ForeignKey(to=Master, on_delete=models.CASCADE)
     photo = models.ImageField(blank=True)
-    short_description = models.TextField
-    full_description = models.TextField
+    short_description = models.TextField(blank=True)
+    full_description = models.TextField(blank=True)
     service_id = models.ForeignKey(to=Service, on_delete=models.CASCADE)
     date_create = models.DateField(auto_now_add=True)
     date_update = models.DateTimeField(auto_now=True)

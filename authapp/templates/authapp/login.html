@@ -1,34 +1,15 @@
 {% extends "authapp/base.html" %}
+{% load static %}
 
 {% block content %}
-<form>
-    <p>
-        <input id="id_username" class="form-control" type="text"
-            name="username" placeholder="Имя пользователя"
-            required="" autofocus="">
-    </p>
-    <p>
-        <input id="id_password" class="form-control" type="password"
-            name="password" placeholder="Пароль" required="">
-    </p>
-    <p>
-        <button type="submit"
-            class="btn btn-primary btn-block">Войти</button>
-    </p>
-</form>
-<p class="text-right">
-    <a href=""><small>Забыли пароль?</small></a>
-</p>
-<h4>Вход через социальные сети</h4>
-<p>
-<div class="btn-group btn-block" role="group">
-    <a class="btn btn-primary" href="#" role="button"><i
-            class="fab fa-vk"></i></a>
-    <a class="btn btn-primary" href="#" role="button"><i
-            class="fab fa-github"></i></a>
-    <a class="btn btn-primary" href="#" role="button"><i
-            class="fab fa-facebook"></i></a>
-</div>
-</p>
+    <form action="#" class="flex form" id="formsend">
+        <input type="text" name="username" id="username" placeholder="Логин" class="input-form"/>
 
+        <input type="password" name="password" id="password" placeholder="Пароль" class="input-form"/>
+        <button type="submit" class="button-form">Вход</button>
+    </form>
+    <div class="flex form">
+        <a href="{% url 'authapp:register' %}">Регистрация</a>
+        <p class="text-right"><a href="">Забыли пароль?</a></p>
+    </div>
 {% endblock %}

@@ -46,4 +46,3 @@ class UserService(models.Model):
     class Meta:
         verbose_name = 'Услуга пользователя'
         verbose_name_plural = 'Услуги пользователям'
-

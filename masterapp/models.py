@@ -18,15 +18,16 @@ class Master(models.Model):
     about_me = models.TextField(blank=True)
     date_start_work = models.DateField(null=True)
     is_stuff = models.CharField(max_length=2, choices=Stuff.choices, default=Stuff.STUDENT)
+    master_profissions = models.ManyToManyField(to='Profession')
     date_create = models.DateField(auto_now_add=True)
     date_update = models.DateTimeField(auto_now=True)
 
     class Meta:
         verbose_name = 'мастер'
         verbose_name_plural = 'мастера'
-    #
-    # def __str__(self):
-    #     return self.
+
+    def __str__(self):
+        return self.user_id.first_name
 
 
 class Profession(models.Model):

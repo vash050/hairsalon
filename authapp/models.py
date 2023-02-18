@@ -3,7 +3,7 @@ from django.contrib.auth.models import AbstractUser
 from django.utils.translation import gettext_lazy as _
 from django.utils import timezone
 from django.core.validators import RegexValidator
-from masterapp.models import Master
+# from masterapp.models import Master
 
 
 class User(AbstractUser):
@@ -35,14 +35,4 @@ class UserProfile(models.Model):
         verbose_name_plural = 'Профили пользователей'
 
 
-class UserService(models.Model):
-    user_id = models.ForeignKey(to='User', on_delete=models.CASCADE)
-    # service_id = models.ForeignKey(to='Service', on_delete=models.CASCADE)
-    time = models.TimeField()
-    # master_id = models.ForeignKey(to='Master', on_delete=models.CASCADE)
-    create_date = models.DateTimeField(auto_now_add=True)
-    update_date = models.DateTimeField(auto_now=True)
 
-    class Meta:
-        verbose_name = 'Услуга пользователя'
-        verbose_name_plural = 'Услуги пользователям'

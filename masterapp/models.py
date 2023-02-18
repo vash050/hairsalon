@@ -1,6 +1,8 @@
+
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
+from authapp.models import User
 from mainapp.models import Service
 
 
@@ -12,7 +14,7 @@ class Master(models.Model):
         DISMISSED = 'DI', _('dismissed')
         STUDENT = 'ST', _('student')
 
-    # user_id = models.ForeignKey(to='User', on_delete=models.CASCADE)
+    user_id = models.ForeignKey(to=User, on_delete=models.CASCADE)
     about_me = models.TextField(blank=True)
     date_start_work = models.DateField(null=True)
     is_stuff = models.CharField(max_length=2, choices=Stuff.choices, default=Stuff.STUDENT)
@@ -22,6 +24,9 @@ class Master(models.Model):
     class Meta:
         verbose_name = 'мастер'
         verbose_name_plural = 'мастера'
+    #
+    # def __str__(self):
+    #     return self.
 
 
 class Profession(models.Model):

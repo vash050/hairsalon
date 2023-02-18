@@ -21,30 +21,30 @@ class RegisterView(TemplateView):
     def post(self, request, *args, **kwargs):
         try:
             print(request.POST.get('username'),
-                        request.POST.get('email'),
-                        request.POST.get('password1'),
-                        request.POST.get('password2'),
-                        request.POST.get('first_name'),
-                        request.POST.get('last_name'),
-                        request.POST.get('password1') == request.POST.get('password2'))
+                  request.POST.get('email'),
+                  request.POST.get('password1'),
+                  request.POST.get('password2'),
+                  request.POST.get('first_name'),
+                  request.POST.get('last_name'),
+                  request.POST.get('password1') == request.POST.get('password2'))
             if all(
                     (
-                        request.POST.get('username'),
-                        request.POST.get('email'),
-                        request.POST.get('password1'),
-                        request.POST.get('password2'),
-                        request.POST.get('first_name'),
-                        request.POST.get('last_name'),
-                        request.POST.get('password1') == request.POST.get('password2')
+                            request.POST.get('username'),
+                            request.POST.get('email'),
+                            request.POST.get('password1'),
+                            request.POST.get('password2'),
+                            request.POST.get('first_name'),
+                            request.POST.get('last_name'),
+                            request.POST.get('password1') == request.POST.get('password2')
                     )
             ):
                 print("tut")
                 new_user = User.objects.create(
-                    # username=request.POST.get('username'),
-                    # first_name=request.POST.get('first_name'),
-                    # last_name=request.POST.get('last_name'),
-                    # email=request.POST.get('email'),
-                    # avatar=request.FILES.get('avatar')
+                    username=request.POST.get('username'),
+                    first_name=request.POST.get('first_name'),
+                    last_name=request.POST.get('last_name'),
+                    email=request.POST.get('email'),
+                    avatar=request.FILES.get('avatar')
                 )
                 print(new_user)
                 new_user.set_password(request.POST.get('password1'))
@@ -58,8 +58,8 @@ class RegisterView(TemplateView):
                 return HttpResponseRedirect(reverse('authapp:register'))
         except Exception as ex:
             messages.add_message(request,
-                 messages.WARNING,
-                 'Что-то пошло не так.')
+                                 messages.WARNING,
+                                 'Что-то пошло не так.')
             return HttpResponseRedirect(reverse('authapp:register'))
 
 

@@ -70,12 +70,12 @@
         </div>
     </div>
     <div>
-
+        <h2 class="h2 red-text">{{ object.service_id.name }}</h2>
         <img src="/media/{{ object.photo }}">
-        <h3>{{ object.short_description }}</h3>
-        <p>{{ object.full_description }}</p>
-        <h4>{{ object.master_id.user_id.first_name }}</h4>
-        <h4>{{ object.service_id.name }}</h4>
+        <h3 class="h3 red-text">{{ object.short_description }}</h3>
+        <p class="nails-recomm-h ta-center">{{ object.full_description }}</p>
+        <h4 class="h3 red-text">Мастер: {{ object.master_id.user_id.first_name }}</h4>
+
     </div>
     <main class="adress-section flex">
         <img class="hero-img hide-mobil show-on-tablet" src="../../../static/img/location.jpg" alt="Салон BEAUTY">

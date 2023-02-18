@@ -1,0 +1,15 @@
+{% extends "authapp/base.html" %}
+{% load static %}
+
+{% block content %}
+    <form action="#" class="flex form" id="formsend">
+        <input type="text" name="username" id="username" placeholder="Логин" class="input-form"/>
+
+        <input type="password" name="password" id="password" placeholder="Пароль" class="input-form"/>
+        <button type="submit" class="button-form">Вход</button>
+    </form>
+    <div class="flex form">
+        <a href="{% url 'authapp:register' %}">Регистрация</a>
+        <p class="text-right"><a href="">Забыли пароль?</a></p>
+    </div>
+{% endblock %}

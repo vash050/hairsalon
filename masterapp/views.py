@@ -1,3 +1,8 @@
 from django.shortcuts import render
+from django.views.generic import ListView, DetailView
 
-# Create your views here.
+from masterapp.models import CompletedWork
+
+
+class MasterWork(DetailView):
+    model = CompletedWork

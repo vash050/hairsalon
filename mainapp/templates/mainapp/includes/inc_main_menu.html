@@ -16,7 +16,8 @@
         <ul class="flex menu-nav">
             <li class="hide-on-tablet"><a href="{% url 'mainapp:gallery' %}">Галерея</a></li>
             <li class="hide-on-tablet"><a href="{% url 'mainapp:contacts' %}">Контакты</a></li>
-            <li class="hide-on-tablet"><a href="#">Кабинет мастера</a></li>
+
+            <li class="hide-on-tablet"><a href="{% url 'masterapp:master_page' master.pk %}">Кабинет мастера</a></li>
             <li class="flex menu-icons">
                 <a href="#"
                 ><img
@@ -74,3 +75,4 @@
         </div>
     </div>
 </div>
+

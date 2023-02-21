@@ -23,4 +23,5 @@ app_name = 'masterapp'
 urlpatterns = [
     path('master-work/<int:pk>', masterapp.MasterWork.as_view(), name='master_work'),
     path('master-page/<int:pk>', masterapp.MasterPage.as_view(), name='master_page'),
+    path('master-update/<int:pk>', masterapp.MasterUpdate.as_view(), name='master_update'),
 ]

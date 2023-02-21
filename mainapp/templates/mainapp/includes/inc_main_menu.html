@@ -21,25 +21,25 @@
                 <a href="#"
                 ><img
                         class="social-media-img"
-                        src="../../../static/img/telegram.svg"
+                        src="{% static 'img/telegram.svg' %}"
                         alt="telegram"
                 /></a>
                 <a href="#"
-                ><img class="social-media-img" src="../../../static/img/vk.svg" alt="vkontakte"
+                ><img class="social-media-img" src="{% static 'img/vk.svg' %}" alt="vkontakte"
                 /></a>
             </li>
         </ul>
     </nav>
-    <img src="../../../static/img/menu.svg" alt="menu" id="openNav" class="openNav desctop-hide"/>
+    <img src="{% static 'img/menu.svg' %}" alt="menu" id="openNav" class="openNav desctop-hide"/>
 </header>
 <div id="mySidenav" class="sidenav desctop-hide">
     <div class="flex sidenav-header">
-        <a href="index.html" class="logo-block">
+        <a href="{% url 'mainapp:index' %}" class="logo-block">
             <p class="logo-font logo-menu">BEAUTY</p>
             <p class="logo-menu-p">САЛОН КРАСОТЫ</p>
         </a>
         <img
-                src="../../../static/img/close_red.svg"
+                src="{% static 'img/close_red.svg' %}"
                 alt="close"
                 id="closeNav"
                 class="closeNav"
@@ -52,7 +52,7 @@
             <li><a href="{% url 'mainapp:about' %}"> О нас</a></li>
             <li><a href="{% url 'mainapp:gallery' %}"> Галерея</a></li>
             <li><a href="{% url 'mainapp:contacts' %}"> Контакты</a></li>
-            <li><a href="contacts.html"> Кабинет мастера</a></li>
+            <li><a href="#"> Кабинет мастера</a></li>
         </ul>
     </nav>
     <div class="flex sidenav-contacts" id="mySidenavContacts">
@@ -64,12 +64,12 @@
         <div class="flex menu-icons">
             <a href="#"
             ><img
-                    src="../../../static/img/telegram.svg"
+                    src="{% static 'img/telegram.svg' %}"
                     class="social-media-img"
                     alt="telegram"
             /></a>
             <a href="#"
-            ><img src="../../../static/img/vk.svg" class="social-media-img" alt="vkontakte"
+            ><img src="{% static 'img/vk.svg' %}" class="social-media-img" alt="vkontakte"
             /></a>
         </div>
     </div>

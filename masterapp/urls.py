@@ -18,7 +18,7 @@ from django.urls import path
 
 import masterapp.views as masterapp
 
-app_name = 'mainapp'
+app_name = 'masterapp'
 
 urlpatterns = [
     path('master-work/<int:pk>', masterapp.MasterWork.as_view(), name='master_work'),

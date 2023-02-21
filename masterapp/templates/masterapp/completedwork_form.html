@@ -1,0 +1,36 @@
+{% extends 'masterapp/base.html' %}
+{% load static %}
+
+{% block conteiner %}
+    <div>
+        <section>
+            {#            <a href="{% url 'masterapp:master_create_work' %}">#}
+            {#                <img class="button__registration__form__img" src="/static/img/Arrow.png">#}
+            {#                Назад#}
+            {#            </a>#}
+            <h1>
+                Заполни форму, что бы создать команду
+            </h1>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% for field in form %}
+
+
+
+                    <div>
+                        <label for="{{ field.id_for_label }}" class="registration__form_input_label">
+                            {{ field.label }}
+                        </label>
+                        {{ field }}
+                    </div>
+
+                {% endfor %}
+
+
+                <input type="submit" value="Создать" class="buttons_type_white button__submit__registration__form"
+                       id="submit__application">
+            </form>
+        </section>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+
+
+{% block conteiner %}
+
+
+    <div>
+        <h2 class="h2 red-text">{{ object.user_id.first_name }}</h2>
+        <img src="/media/{{ object.user_id.avatar }}">
+        <h3 class="h3 red-text">{{ object.about_me }}</h3>
+        <h4 class="nails-recomm-h ta-center"> мои профессиии:</h4>
+        {% for profission in object.master_profissions.all %}
+            <p class="nails-recomm-h ta-center">{{ profission }}</p>
+        {% endfor %}
+
+        <p class="nails-recomm-h ta-center">{{ object.date_start_work }}</p>
+        <h4 class="h3 red-text">Статус: {{ object.is_stuff }}</h4>
+    </div>
+
+    <button>
+        редактировать данные
+    </button>
+
+
+    <footer class="container">
+        <div class="section-footer flex">
+            <div class="flex footer-container">
+                <a href="index.html">
+                    <p class="logo-font logo-menu">BEAUTY</p>
+                    <p class="logo-menu-p">САЛОН КРАСОТЫ</p>
+                </a>
+                <a href="#" class="footer-policy">Политика конфиденциальности</a>
+
+                <div class="flex menu-icons">
+                    <a href="#"
+                    ><img
+                            src="../../../static/img/telegram.svg"
+                            class="social-media-img"
+                            alt="telegram"
+                    /></a>
+                    <a href="#"
+                    ><img src="../../../static/img/vk.svg" class="social-media-img" alt="vkontakte"
+                    /></a>
+                </div>
+            </div>
+            <a href="#" class="mobile-footer-policy desctop-hide">Политика конфиденциальности</a>
+        </div>
+    </footer>
+
+{% endblock %}

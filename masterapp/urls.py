@@ -21,5 +21,6 @@ import masterapp.views as masterapp
 app_name = 'mainapp'
 
 urlpatterns = [
-    path('master-work/<int:pk>', masterapp.MasterWork.as_view(), name='master_work')
+    path('master-work/<int:pk>', masterapp.MasterWork.as_view(), name='master_work'),
+    path('master-page/<int:pk>', masterapp.MasterPage.as_view(), name='master_page'),
 ]

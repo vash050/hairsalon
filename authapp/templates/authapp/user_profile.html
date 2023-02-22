@@ -5,5 +5,10 @@
     <form class="flex form">
         <h1>Ваше имя: {{ user.first_name }}</h1>
         <h1>Номер телефона: {{ user.phone }}</h1>
+        {% if services.count()>0 %}
+            {% for service in services %}
+                <h4>{{ service.name }}</h4>
+            {% endfor %}
+        {% endif %}
     </form>
 {% endblock %}

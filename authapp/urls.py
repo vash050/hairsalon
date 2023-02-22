@@ -16,17 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from authapp.apps import AuthappConfig
 from django.urls import path
-from authapp.views import LoginView, RegisterView, LogoutView, EditView
+from authapp.views import CustomLoginView, RegisterView, LogoutView, EditView
 
 app_name = 'authapp'
 
 urlpatterns = [
-    # path('login/', authapp.login, name='login'),
-    # path('profile/', authapp.profile, name='profile'),
-    # path('register/', authapp.register, name='register'),
-    # path('logout/', authapp.logout, name='logout'),
-    # path('update/', authapp.update, name='update'),
-    path('login/', LoginView.as_view(), name='login'),
+    path('login/', CustomLoginView.as_view(), name='login'),
     path('register/', RegisterView.as_view(), name='register'),
     path('logout/', LogoutView.as_view(), name='logout'),
     path('update/', EditView.as_view(), name='edit'),

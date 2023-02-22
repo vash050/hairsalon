@@ -2,8 +2,9 @@
 {% load static %}
 
 {% block content %}
-    <form action="#" class="flex form" id="formsend">
-        <input type="text" name="username" id="username" placeholder="Логин" class="input-form"/>
+    <form method="post" action="#" class="flex form" id="formsend">
+        {% csrf_token %}
+        <input type="text" name="phone" id="phone" placeholder="Логин" class="input-form"/>
 
         <input type="password" name="password" id="password" placeholder="Пароль" class="input-form"/>
         <button type="submit" class="button-form">Вход</button>

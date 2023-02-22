@@ -8,7 +8,7 @@
 
     <div>
         <h2 class="h2 red-text">{{ object.user_id.first_name }}</h2>
-        <img src="/media/{{ object.user_id.avatar }}">
+        <img src="/media/{{ object.user_id.avatar }}" class="photo-master">
         <h3 class="h3 red-text">{{ object.about_me }}</h3>
         <h4 class="nails-recomm-h ta-center"> мои профессиии:</h4>
         {% for profission in object.master_profissions.all %}
@@ -17,15 +17,17 @@
 
         <p class="nails-recomm-h ta-center">{{ object.date_start_work }}</p>
         <h4 class="h3 red-text">Статус: {{ object.is_stuff }}</h4>
+        <div class="nails-recomm-h ta-center">
+            <button>
+{#                <a href="{% url 'masterapp:master_update' master %}"> редактировать данные</a>#}
+                <a href="#"> редактировать данные</a>
+            </button>
+
+            <button type="button">
+                <a href="{% url 'masterapp:master_create_work' %}"> добавить работу в портфолио</a>
+            </button>
+        </div>
     </div>
-
-    <button>
-        редактировать данные
-    </button>
-
-    <button type="button">
-        <a href="{% url 'masterapp:master_create_work' %}"> добавить работу в портфолио</a>
-    </button>
 
 
     <footer class="container">

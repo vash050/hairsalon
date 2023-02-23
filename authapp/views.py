@@ -6,13 +6,14 @@ from django.contrib import messages
 from django.urls import reverse, reverse_lazy
 
 
-class CustomLoginView(LoginView):
-    template_name = 'authapp/login.html'
-    extra_context = {
-        'title': 'Вход пользователя'
-    }
-
-    success_url = reverse_lazy('mainapp:index')
+# class CustomLoginView(LoginView):
+#     redirect_authenticated_user = True
+#     template_name = 'authapp/login.html'
+#     extra_context = {
+#         'title': 'Вход пользователя'
+#     }
+#
+#     success_url = reverse_lazy('mainapp:index')
 
 
 class RegisterView(TemplateView):
@@ -22,6 +23,7 @@ class RegisterView(TemplateView):
     }
 
     def post(self, request, *args, **kwargs):
+        print(request.POST)
         try:
             if all(
                     (

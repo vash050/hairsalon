@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
 from pathlib import Path
+
+from django.urls import reverse
+
 from tmp.config import SECRET_KEY
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -135,5 +138,6 @@ AUTH_USER_MODEL = 'authapp.User'
 
 LOGIN_REDIRECT_URL = 'mainapp:index'
 LOGOUT_REDIRECT_URL = 'mainapp:index'
+
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'

@@ -10,7 +10,7 @@ class User(AbstractUser):
     # first_name = models.CharField(_('Имя'), max_length=30, blank=True)
     # last_name = models.CharField(_('Фамилия'), max_length=50, blank=True)
     phone_regex = RegexValidator(regex=r"[8]{1}-[0-9]{3}-[0-9]{4}",
-                                 message="Phone number must be entered in the format: '8-999-99999'. Up to 10 digits allowed.")
+                                 message="Phone number must be entered in the format: '8-999-9999999'. Up to 10 digits allowed.")
     phone = models.CharField(_('Телефон'), unique=True, validators=[phone_regex], max_length=17, blank=True)  # Validators should be a list
     email = models.EmailField(_('Email'), blank=True, unique=True)
     avatar = models.ImageField(upload_to='users', blank=True)

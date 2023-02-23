@@ -24,5 +24,5 @@ urlpatterns = [
     path('login/', CustomLoginView.as_view(), name='login'),
     path('register/', RegisterView.as_view(), name='register'),
     path('logout/', LogoutView.as_view(), name='logout'),
-    path('update/', EditView.as_view(), name='edit'),
+    path('update/<int:pk>/', EditView.as_view(), name='edit'),
 ]

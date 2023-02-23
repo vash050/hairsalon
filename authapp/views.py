@@ -1,15 +1,18 @@
+from django.contrib.auth.views import LoginView, LogoutView
 from django.shortcuts import render, HttpResponseRedirect
 from django.views.generic import TemplateView
 from .models import User
 from django.contrib import messages
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 
 
-class LoginView(TemplateView):
+class CustomLoginView(LoginView):
     template_name = 'authapp/login.html'
     extra_context = {
         'title': 'Вход пользователя'
     }
+
+    success_url = reverse_lazy('mainapp:index')
 
 
 class RegisterView(TemplateView):
@@ -20,16 +23,9 @@ class RegisterView(TemplateView):
 
     def post(self, request, *args, **kwargs):
         try:
-            print(request.POST.get('username'),
-                  request.POST.get('email'),
-                  request.POST.get('password1'),
-                  request.POST.get('password2'),
-                  request.POST.get('first_name'),
-                  request.POST.get('last_name'),
-                  request.POST.get('password1') == request.POST.get('password2'))
             if all(
                     (
-                            request.POST.get('username'),
+                            request.POST.get('phone'),
                             request.POST.get('email'),
                             request.POST.get('password1'),
                             request.POST.get('password2'),
@@ -38,9 +34,9 @@ class RegisterView(TemplateView):
                             request.POST.get('password1') == request.POST.get('password2')
                     )
             ):
-                print("tut")
                 new_user = User.objects.create(
-                    username=request.POST.get('username'),
+                    username=request.POST.get('phone'),
+                    phone=request.POST.get('phone'),
                     first_name=request.POST.get('first_name'),
                     last_name=request.POST.get('last_name'),
                     email=request.POST.get('email'),
@@ -60,12 +56,36 @@ class RegisterView(TemplateView):
             messages.add_message(request,
                                  messages.WARNING,
                                  'Что-то пошло не так.')
-            return HttpResponseRedirect(reverse('authapp:register'))
+            return HttpResponseRedirect(reverse('mainapp:index'))
 
 
-class LogoutView(TemplateView):
+class CustomLogoutView(LogoutView):
     template_name = 'authapp/logout.html'
 
 
 class EditView(TemplateView):
-    template_name = 'authapp/edit.html'
+    template_name = 'authapp/user_profile.html'
+    extra_context = {
+        'title': 'Профиль пользователя'
+    }
+    extra_context["user"] = User.objects.get(phone="8-999-9999")
+
+
+
+
+    def post(self, request, *args, **kwargs):
+        # if request.POST.get('username'):
+        #     request.user.username = request.POST.get('username')
+        #
+        # if request.POST.get('first_name'):
+        #     request.user.username = request.POST.get('first_name')
+        #
+        # if request.POST.get('last_name'):
+        #     request.user.username = request.POST.get('last_name')
+        #
+        # if request.POST.get('phone'):
+        #     request.user.username = request.POST.get('phone')
+        #
+        # request.user.save()
+        return self.extra_context
+        # return HttpResponseRedirect(reverse('authapp:edit'))

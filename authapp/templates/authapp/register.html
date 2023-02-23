@@ -5,10 +5,11 @@
     <form method="POST" class="flex form" id="formsend" enctype="multipart/form-data">
         {% csrf_token %}
 
-        <input type="text" name="username" autofocus=""
-               autocapitalize="none" autocomplete="username"
+        <input type="tel" id="id_phone" name="phone"
+               pattern="[8]{1}-[0-9]{3}-[0-9]{4}"
+               autocapitalize="none" autocomplete="phone"
                maxlength="150" class="input-form textinput textInput form-control"
-               required="" id="id_username" placeholder="Логин"/>
+               required="" id="id_phone" placeholder="Телефон в формате 8-456-7890"/>
 
         <input type="text" name="email" autofocus=""
                autocapitalize="none" autocomplete="email"

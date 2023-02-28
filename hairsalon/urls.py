@@ -23,6 +23,7 @@ urlpatterns = [
     path('auth/', include('authapp.urls'), name='authapp'),
     path('admin/', admin.site.urls),
     path('master/', include('masterapp.urls'), name='master'),
+    path('', include('social_django.urls')),
 ]
 
 if settings.DEBUG: # new

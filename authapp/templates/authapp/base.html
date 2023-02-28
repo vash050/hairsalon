@@ -35,8 +35,9 @@
     <p>Вход через социальные сети</p>
     <p>
     <div class="btn-group btn-block" role="group">
-        <a href="#"><img src="{% static 'img/vk.svg' %}" class="social-media-img" alt="vkontakte"
-        /></a>
+        <a href="/login/vk-oauth2"><img src="{% static 'img/vk.svg' %}" data-toggle="tooltip"
+                                        title="{% trans 'Login via VKontakte' %}" class="social-media-img"
+                                        alt="vkontakte"/></a>
     </div>
     </p>
 </section>

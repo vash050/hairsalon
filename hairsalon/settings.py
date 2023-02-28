@@ -148,7 +148,7 @@ AUTHENTICATION_BACKENDS = (
     'social_core.backends.vk.VKOAuth2',          # бекенд авторизации через ВКонтакте
     'django.contrib.auth.backends.ModelBackend', # бекенд классической аутентификации, чтобы работала авторизация через обычный логин и пароль
 )
-
+# TODO внести 'ID приложения' и 'Защищённый ключ'
 SOCIAL_AUTH_VK_OAUTH2_KEY = 'ID приложения'
 SOCIAL_AUTH_VK_OAUTH2_SECRET = 'Защищённый ключ'
 

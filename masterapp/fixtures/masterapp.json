@@ -1,0 +1,37 @@
+[
+{
+  "model": "masterapp.master",
+  "pk": 2,
+  "fields": {
+    "user_id": 3,
+    "about_me": "тестовый период",
+    "date_start_work": "2023-02-22",
+    "is_stuff": "CU",
+    "date_create": "2023-02-22",
+    "date_update": "2023-02-22T19:08:41.163Z",
+    "master_profissions": [
+      1
+    ]
+  }
+},
+{
+  "model": "masterapp.profession",
+  "pk": 1,
+  "fields": {
+    "name": "Oleg",
+    "short_description": "",
+    "full_description": "",
+    "is_active": true
+  }
+},
+{
+  "model": "masterapp.profession",
+  "pk": 2,
+  "fields": {
+    "name": "Oleg",
+    "short_description": "",
+    "full_description": "",
+    "is_active": true
+  }
+}
+]

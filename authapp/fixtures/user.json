@@ -1,62 +1,82 @@
 [
 {
-  "model": "authapp.user",
-  "pk": 1,
-  "fields": {
-    "password": "pbkdf2_sha256$260000$K932yZBp8UUjsOID5ppir2$WixdFniLLUT8lKK2DjUnz1FoxJVSvTThGp6Lk0YhP/4=",
-    "last_login": "2023-02-28T17:12:55.953Z",
-    "is_superuser": false,
-    "username": "Ivan",
-    "first_name": "Иван",
-    "last_name": "Петренков",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2023-02-21T19:42:24Z",
-    "phone": "8-999-999-9999",
-    "email": "fig@vam.ru",
-    "avatar": "",
-    "groups": [],
-    "user_permissions": []
-  }
+    "model": "authapp.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$K932yZBp8UUjsOID5ppir2$WixdFniLLUT8lKK2DjUnz1FoxJVSvTThGp6Lk0YhP/4=",
+        "last_login": "2023-02-28T17:12:55.953Z",
+        "is_superuser": false,
+        "username": "Ivan",
+        "first_name": "Иван",
+        "last_name": "Петренков",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-02-21T19:42:24Z",
+        "phone": "8-999-999-9999",
+        "email": "fig@vam.ru",
+        "avatar": "",
+        "groups": [],
+        "user_permissions": []
+    }
 },
 {
-  "model": "authapp.user",
-  "pk": 2,
-  "fields": {
-    "password": "pbkdf2_sha256$260000$mVxejQcfUagYELWlVhJRUJ$yf1D3DpgmaanlBofPacSnTOien+NW/NheUf6V+JdsMo=",
-    "last_login": "2023-02-28T17:14:08.829Z",
-    "is_superuser": true,
-    "username": "django",
-    "first_name": "Django",
-    "last_name": "ADMIN",
-    "is_staff": true,
-    "is_active": true,
-    "date_joined": "2023-02-22T19:00:10Z",
-    "phone": "",
-    "email": "django@mail.ru",
-    "avatar": "",
-    "groups": [],
-    "user_permissions": []
-  }
+    "model": "authapp.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$mVxejQcfUagYELWlVhJRUJ$yf1D3DpgmaanlBofPacSnTOien+NW/NheUf6V+JdsMo=",
+        "last_login": "2023-02-28T17:14:08.829Z",
+        "is_superuser": true,
+        "username": "django",
+        "first_name": "Django",
+        "last_name": "ADMIN",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2023-02-22T19:00:10Z",
+        "phone": "",
+        "email": "django@mail.ru",
+        "avatar": "",
+        "groups": [],
+        "user_permissions": []
+    }
 },
 {
-  "model": "authapp.user",
-  "pk": 3,
-  "fields": {
-    "password": "qweqwe12",
-    "last_login": null,
-    "is_superuser": false,
-    "username": "Oleg",
-    "first_name": "Олег",
-    "last_name": "Батькович",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2023-02-22T19:03:37Z",
-    "phone": "8-963-9633",
-    "email": "figu@vam.ru",
-    "avatar": "",
-    "groups": [],
-    "user_permissions": []
-  }
+    "model": "authapp.user",
+    "pk": 3,
+    "fields": {
+        "password": "qweqwe12",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Oleg",
+        "first_name": "Олег",
+        "last_name": "Батькович",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-02-22T19:03:37Z",
+        "phone": "8-963-9633",
+        "email": "figu@vam.ru",
+        "avatar": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "authapp.user",
+    "pk": 6,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$IEb4EQARWvb8QsyN5h5A5S$n1Zf2DtZ76JOyXOgLTQzLZoBnkYDRlcYnkMHBbQW+8M=",
+        "last_login": "2023-03-01T14:26:32Z",
+        "is_superuser": true,
+        "username": "Vasiliy",
+        "first_name": "Vasiliy",
+        "last_name": "Bird",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2023-03-01T14:22:16Z",
+        "phone": "8-911-452-2556",
+        "email": "vash050@ya.ru",
+        "avatar": "users/anastasia_4vmSMY7.jpg",
+        "groups": [],
+        "user_permissions": []
+    }
 }
 ]

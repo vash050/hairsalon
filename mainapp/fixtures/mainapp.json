@@ -1,0 +1,36 @@
+[
+{
+  "model": "mainapp.hall",
+  "pk": 1,
+  "fields": {
+    "name": "Парикмахерский зал",
+    "short_description": "Парикмахерский зал",
+    "full_description": "Стрижка, укладка, прическа, окрашивание и т.д.",
+    "is_active": true
+  }
+},
+{
+  "model": "mainapp.categoryservice",
+  "pk": 1,
+  "fields": {
+    "name": "Стрижка",
+    "short_description": "Стрижка",
+    "full_description": "Стрижка женская",
+    "hall": 1,
+    "is_active": true
+  }
+},
+{
+  "model": "mainapp.service",
+  "pk": 1,
+  "fields": {
+    "name": "Стрижка женская",
+    "short_description": "Стрижка женская",
+    "full_description": "мытье головы, стрижка, сушка с использованием укладочных средств",
+    "category_service": 1,
+    "price": "900.00",
+    "duration": 60,
+    "is_active": true
+  }
+}
+]

@@ -6,28 +6,57 @@
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="../../../static/css/general.css"/>
-    <link rel="stylesheet" href="../../../static/css/style.css"/>
-    <link rel="stylesheet" href="../../../static/css/queries.css"/>
+    <link rel="stylesheet" href="{% static 'css/general.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/queries.css' %}"/>
     <!-- file for green sock -->
-    <script src="../../../static/js/gsap.min.js"></script>
+    <script src="{% static 'js/gsap.min.js' %}"></script>
     <!-- files for swiper -->
-    <link rel="stylesheet" href="../../../static/css/swiper.css"/>
-    <script src="../../../static/js/swiper.js"></script>
+    <link rel="stylesheet" href="{% static 'css/swiper.css' %}"/>
+    <script src="{% static 'js/swiper.js' %}"></script>
     <!-- file for jquery -->
-    <script src="../../../static/js/jquery.js"></script>
+    <script src="{% static 'js/jquery.js' %}"></script>
     <!-- current js files -->
-    <script src="../../../static/js/sliderHero.js" defer></script>
-    <script src="../../../static/js/gsapCurrent.js" defer></script>
-    <script src="../../../static/js/priceShow.js" defer></script>
-    <script src="../../../static/js/sidebar.js" defer></script>
+    <script src="{% static 'js/sliderHero.js' %}" defer></script>
+    <script src="{% static 'js/gsapCurrent.js' %}" defer></script>
+    <script src="{% static 'js/priceShow.js' %}" defer></script>
+    <script src="{% static 'js/sidebar.js' %}" defer></script>
     <title>BEAUTY Салон</title>
 </head>
 <body>
+
+{% include 'mainapp/includes/inc_main_menu.html' %}
 
 {% block conteiner %}
 
 {% endblock %}
 
+{% block footer %}
+
+    <footer class="container">
+        <div class="section-footer flex">
+            <div class="flex footer-container">
+                <a href="../../../mainapp/templates/mainapp/index.html">
+                    <p class="logo-font logo-menu">BEAUTY</p>
+                    <p class="logo-menu-p">САЛОН КРАСОТЫ</p>
+                </a>
+                <a href="#" class="footer-policy">Политика конфиденциальности</a>
+
+                <div class="flex menu-icons">
+                    <a href="#"
+                    ><img
+                            src="{% static 'img/telegram.svg' %}"
+                            class="social-media-img"
+                            alt="telegram"
+                    /></a>
+                    <a href="#"
+                    ><img src="{% static 'img/vk.svg' %}" class="social-media-img" alt="vkontakte"
+                    /></a>
+                </div>
+            </div>
+            <a href="#" class="mobile-footer-policy desctop-hide">Политика конфиденциальности</a>
+        </div>
+    </footer>
+{% endblock %}
 </body>
 </html>

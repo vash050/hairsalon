@@ -1,4 +1,4 @@
-{% extends 'mainapp/base.html' %}
+{% extends 'masterapp/base.html' %}
 {% load static %}
 
 
@@ -19,8 +19,8 @@
         <h4 class="h3 red-text">Статус: {{ object.is_stuff }}</h4>
         <div class="nails-recomm-h ta-center">
             <button>
-{#                <a href="{% url 'masterapp:master_update' master %}"> редактировать данные</a>#}
-                <a href="#"> редактировать данные</a>
+                <a href="{% url 'masterapp:master_update' master.pk %}"> редактировать данные</a>
+
             </button>
 
             <button type="button">

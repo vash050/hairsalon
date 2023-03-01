@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, UpdateView, CreateView
 
+from masterapp.forms import UpdateMasterDetailForm
 from masterapp.models import CompletedWork, Master
 
 
@@ -15,7 +16,8 @@ class MasterPage(DetailView):
 
 class MasterUpdate(UpdateView):
     model = Master
-    fields = ['user_id', 'about_me', 'is_stuff', 'master_profissions']
+    form_class = UpdateMasterDetailForm
+    success_url = reverse_lazy('mainapp:index')
 
 
 class CompletedWorkCreate(CreateView):

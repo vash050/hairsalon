@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, UpdateView, CreateView
 
-from masterapp.forms import UpdateMasterDetailForm
+from masterapp.forms import UpdateMasterDetailForm, CompletedWorkCreateForm
 from masterapp.models import CompletedWork, Master
 
 
@@ -22,5 +22,16 @@ class MasterUpdate(UpdateView):
 
 class CompletedWorkCreate(CreateView):
     model = CompletedWork
-    fields = '__all__'
+    form_class = CompletedWorkCreateForm
     success_url = reverse_lazy('mainapp:gallery')
+
+    def post(self, request, *args, **kwargs):
+
+        form = self.get_form()
+        if form.is_valid():
+            new_completed_work = form.save(commit=False)
+            new_completed_work.master_id_id = Master.objects.get(user_id_id=request.user.id).id
+            new_completed_work.save()
+            return self.form_valid(form)
+        else:
+            return self.form_invalid(form)

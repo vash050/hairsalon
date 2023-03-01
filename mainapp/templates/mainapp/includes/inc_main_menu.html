@@ -6,8 +6,9 @@
             <li><a href="{% url 'mainapp:gallery' %}"> Услуги</a></li>
             <li><a href="#">Прайс</a></li>
             <li><a href="{% url 'mainapp:about' %}">О нас</a></li>
-            {% if user.is_authenticated %}
-                <li class="hide-on-tablet"><a href="{% url 'authapp:user-detail' user.pk %}">Личный кабинет</a></li>
+            {% if user.is_authenticated and user != AnonymousUser and master %}
+                <li class="hide-on-tablet"><a href="{% url 'masterapp:master_page' master.pk %}">Кабинет мастера</a>
+                </li>
             {% endif %}
         </ul>
     </nav>
@@ -23,14 +24,11 @@
                 <li class="hide-on-tablet"><a href="{% url 'authapp:register' %}">Регистрация</a></li>
                 <li class="hide-on-tablet"><a href="{% url 'authapp:login' %}">Вход</a></li>
             {% else %}
-                <li class="hide-on-tablet" ><a href="{% url 'authapp:edit' user.pk %}">
+                <li class="hide-on-tablet"><a href="{% url 'authapp:edit' user.pk %}">
                     {{ user.first_name|default:user.username }}</a></li>
                 <li class="hide-on-tablet"><a href="{% url 'authapp:logout' %}">Выход</a></li>
             {% endif %}
-            {% if user.is_authenticated and user != AnonymousUser and master %}
-                <li class="hide-on-tablet"><a href="{% url 'masterapp:master_page' master.pk %}">Кабинет мастера</a>
-                </li>
-            {% endif %}
+
 
             <li class="flex menu-icons">
                 <a href="#"

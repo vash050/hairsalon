@@ -1,22 +1,21 @@
 from django.contrib.auth.views import LoginView, LogoutView
 from django.shortcuts import render, HttpResponseRedirect
-from django.views.generic import TemplateView, UpdateView
-from .models import User
+from django.views.generic import TemplateView, UpdateView, DetailView
+from .models import User, UserProfile
 from django.contrib import messages
 from django.urls import reverse, reverse_lazy
 
 
-# class CustomLoginView(LoginView):
-#     redirect_authenticated_user = True
-#     template_name = 'authapp/login.html'
-#     extra_context = {
-#         'title': 'Вход пользователя'
-#     }
-#
-#     success_url = reverse_lazy('mainapp:index')
+class LoginView(LoginView):
+    redirect_authenticated_user = True
+    extra_context = {
+        'title': 'Вход пользователя'
+    }
+    # success_url = reverse_lazy('mainapp:index')
 
 
 class RegisterView(TemplateView):
+    redirect_authenticated_user = True
     template_name = 'authapp/register.html'
     extra_context = {
         'title': 'Регистрация пользователя'
@@ -61,34 +60,13 @@ class RegisterView(TemplateView):
             return HttpResponseRedirect(reverse('mainapp:index'))
 
 
-class CustomLogoutView(LogoutView):
-    template_name = 'authapp/logout.html'
-
-
-    # class EditView(TemplateView):
-    #     template_name = 'authapp/user_profile.html'
-    #     extra_context = {'title': 'Профиль пользователя', "user": User.objects.get(phone="8-999-999999")}
-    #
-    #     def post(self, request, *args, **kwargs):
-    #         # if request.POST.get('username'):
-    #         #     request.user.username = request.POST.get('username')
-    #         #
-    #         # if request.POST.get('first_name'):
-    #         #     request.user.username = request.POST.get('first_name')
-    #         #
-    #         # if request.POST.get('last_name'):
-    #         #     request.user.username = request.POST.get('last_name')
-    #         #
-    #         # if request.POST.get('phone'):
-    #         #     request.user.username = request.POST.get('phone')
-    #         #
-    #         # request.user.save()
-    #         return self.extra_context
-    #         # return HttpResponseRedirect(reverse('authapp:edit'))
-
-
-class EditView(UpdateView):
+class UserEditView(UpdateView):
     model = User
-    fields = ('username', 'phone', 'email', 'avatar')
+    fields = ('username', 'first_name', 'last_name', 'phone', 'email', 'avatar')
+    template_name_suffix = '_update_form'
     success_url = reverse_lazy('mainapp:index')
 
+
+class UserDetailView(DetailView):
+    model = UserProfile
+    template_name = 'authapp/user_detail.html'

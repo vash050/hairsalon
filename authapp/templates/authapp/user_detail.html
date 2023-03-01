@@ -1,0 +1,16 @@
+<!--{% extends "authapp/base.html" %}-->
+{% load static %}
+
+{% block content %}
+
+<h1>{{ object.date_born }}</h1>
+<h1>{{ object.additions }}</h1>
+<h1>{{ object.favourite }}</h1>
+<span class='lead'>{{ user.first_name }} </span>
+<div class='body'>{{ user.pk__second_name|safe }} </div>
+
+<!--<ul class='latest'>-->
+<!--{% for service in latest %} <li>{{ user.pk }}. {{ user.email }}</li>{% endfor %}-->
+<!--</ul>-->
+
+{% endblock %}

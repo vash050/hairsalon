@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'social_django',
     'authapp',
     'mainapp',
     'masterapp',
@@ -70,6 +71,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -141,3 +144,4 @@ LOGOUT_REDIRECT_URL = 'mainapp:index'
 
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+

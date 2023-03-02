@@ -4,17 +4,23 @@
 
 {% block conteiner %}
 
-<section class="flex form-section container">
-    <form method="POST" class="flex form" id="formsend" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
+    <section class="flex form-section container">
+        <form method="POST" class="flex form" id="formsend" enctype="multipart/form-data">
 
-        <button type="submit"
-                class="button-form btn btn-primary btn-block">
-            сохранить
-        </button>
+            {% csrf_token %}
 
-    </form>
-</section>
+            {% for el in form %}
+                <div class="form-block">
+                    <label for="{{ el.for }}">{{ el.label }}:</label>
+                    {{ el }}
+                </div>
+            {% endfor %}
+            <button type="submit"
+                    class="button-form btn btn-primary btn-block">
+                сохранить
+            </button>
+
+        </form>
+    </section>
 
 {% endblock %}

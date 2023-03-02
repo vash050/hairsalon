@@ -23,3 +23,4 @@ class CompletedWorkCreateForm(ModelForm):
         super().__init__(*args, **kwargs)
         for field_name, field in self.fields.items():
             field.widget.attrs["class"] = "input-form"
+            print(field.widget.attrs)

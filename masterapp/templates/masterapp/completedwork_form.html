@@ -3,16 +3,19 @@
 
 {% block conteiner %}
     <div>
-        <section>
-            <h1>
+        <section class="flex form-section container">
+            <h2 class="h2 red-text">
                 Добавление работы
-            </h1>
+            </h2>
             <form method="POST" class="flex form" id="formsend" enctype="multipart/form-data">
                 {% csrf_token %}
 
-                <div>
-                    {{ form.as_p }}
-                </div>
+                {% for el in form %}
+                    <div class="form-block">
+                        <label for="{{ el.for }}">{{ el.label }}:</label>
+                        {{ el }}
+                    </div>
+                {% endfor %}
 
                 <input type="submit" value="добавить" class="button-form btn btn-primary btn-block">
             </form>

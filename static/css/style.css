@@ -749,8 +749,7 @@ input[type="checkbox"]:checked::before {
 /**************************/
 
 .photo-master {
-    width: 50%;
-    height: 50%;
-    margin-left: 25%;
+    height: 250px;
+    margin-left: 45%;
 
 }

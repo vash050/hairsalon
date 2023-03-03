@@ -1,3 +1,5 @@
+from django.core.exceptions import ImproperlyConfigured
+from django.db.models import QuerySet
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, DetailView, UpdateView, CreateView, TemplateView
@@ -64,3 +66,4 @@ class CompletedWorkCreate(CreateView):
             return self.form_valid(form)
         else:
             return self.form_invalid(form)
+

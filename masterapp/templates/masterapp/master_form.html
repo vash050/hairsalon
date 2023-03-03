@@ -9,7 +9,13 @@
 
             {% csrf_token %}
 
-            {% for el in form %}
+            {% for el in master_form %}
+                <div class="form-block">
+                    <label for="{{ el.for }}">{{ el.label }}:</label>
+                    {{ el }}
+                </div>
+            {% endfor %}
+            {% for el in user_form %}
                 <div class="form-block">
                     <label for="{{ el.for }}">{{ el.label }}:</label>
                     {{ el }}
@@ -19,7 +25,7 @@
                     class="button-form btn btn-primary btn-block">
                 сохранить
             </button>
-
+{{ request }}
         </form>
     </section>
 

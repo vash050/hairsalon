@@ -17,12 +17,13 @@ from django.contrib import admin
 from django.urls import path
 
 import mainapp.views as mainapp
+import masterapp.views as masterapp
 
 app_name = 'mainapp'
 
 urlpatterns = [
     path('', mainapp.index, name='index'),
-    path('gallery', mainapp.gallery, name='gallery'),
+    path('gallery', mainapp.Gallery.as_view(), name='gallery'),
     path('about', mainapp.about, name='about'),
     path('contacts', mainapp.contacts, name='contacts')
 ]

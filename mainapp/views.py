@@ -11,8 +11,6 @@ def index(request):
     title = 'главная'
     context = {"title": title}
 
-    print(request.user)
-    print(request.user.pk)
     if Master.objects.filter(user_id=request.user.pk).exists():
         context['master'] = Master.objects.get(user_id=request.user.pk)
 
@@ -47,6 +45,7 @@ class Gallery(ListView):
                 )
         context = self.get_context_data()
         context['master'] = Master.objects.get(user_id=request.user.pk)
+        context['master_list'] = Master.objects.all()
         return self.render_to_response(context)
 
 

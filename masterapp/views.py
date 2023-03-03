@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from django.urls import reverse_lazy
+from django.shortcuts import render, redirect
+from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, DetailView, UpdateView, CreateView, TemplateView
 
 from masterapp.forms import UpdateMasterDetailForm, CompletedWorkCreateForm, UpdateUserForm
@@ -39,7 +39,7 @@ class MasterUpdate(TemplateView):
         if master_form.is_valid() and user_form.is_valid():
             master_form.save()
             user_form.save()
-            return render(request, "mainapp/index.html")
+            return redirect('mainapp:index')
         else:
             return self.render_to_response(
                 self.get_context_data(

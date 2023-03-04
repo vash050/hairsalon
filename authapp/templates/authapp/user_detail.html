@@ -1,16 +1,30 @@
-<!--{% extends "authapp/base.html" %}-->
+{% extends "authapp/base.html" %}
 {% load static %}
 
-{% block content %}
+{% block conteiner %}
+    <div>
+        <h2 class="h2 red-text">{{ object.username }}</h2>
+        <img src="/media/{{ object.avatar }}" class="photo-master">
+        <h3 class="h3 red-text">{{ object.first_name }}</h3>
+        <h3 class="h3 red-text">{{ object.last_name }}</h3>
+        <h3 class="h3 red-text">{{ object.phone }}</h3>
+        <h3 class="h3 red-text">{{ object.email }}</h3>
 
-<h1>{{ object.date_born }}</h1>
-<h1>{{ object.additions }}</h1>
-<h1>{{ object.favourite }}</h1>
-<span class='lead'>{{ user.first_name }} </span>
-<div class='body'>{{ user.pk__second_name|safe }} </div>
+        <div class="nails-recomm-h ta-center">
+            <button>
+                <a href="{% url 'authapp:edit' user.pk %}"> редактировать данные</a>
 
-<!--<ul class='latest'>-->
-<!--{% for service in latest %} <li>{{ user.pk }}. {{ user.email }}</li>{% endfor %}-->
-<!--</ul>-->
+            </button>
+            {% if object.is_staff %}
+                <button type="button">
+                    <a href="{% url 'masterapp:master_page' user.pk %}"> кабинет сотрудника</a>
+                </button>
+                </div>
+            {% endif %}
+{{ object.pk}}
+    </div>
+    <!--<ul class='latest'>-->
+    <!--{% for service in latest %} <li>{{ user.pk }}. {{ user.email }}</li>{% endfor %}-->
+    <!--</ul>-->
 
 {% endblock %}

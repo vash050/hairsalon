@@ -68,5 +68,5 @@ class UserEditView(UpdateView):
 
 
 class UserDetailView(DetailView):
-    model = UserProfile
+    model = User
     template_name = 'authapp/user_detail.html'

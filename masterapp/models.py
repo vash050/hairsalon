@@ -14,7 +14,7 @@ class Master(models.Model):
         DISMISSED = 'DI', _('dismissed')
         STUDENT = 'ST', _('student')
 
-    user_id = models.ForeignKey(to=User, on_delete=models.CASCADE)
+    user_id = models.OneToOneField(to=User, on_delete=models.CASCADE)
     about_me = models.TextField(blank=True)
     date_start_work = models.DateField(null=True)
     is_stuff = models.CharField(max_length=2, choices=Stuff.choices, default=Stuff.STUDENT)

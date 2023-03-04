@@ -17,11 +17,11 @@
             </button>
             {% if object.is_staff %}
                 <button type="button">
-                    <a href="{% url 'masterapp:master_page' user.pk %}"> кабинет сотрудника</a>
+                    <a href="{% url 'masterapp:master_page' object.master.pk %}"> кабинет сотрудника</a>
                 </button>
                 </div>
             {% endif %}
-{{ object.pk}}
+
     </div>
     <!--<ul class='latest'>-->
     <!--{% for service in latest %} <li>{{ user.pk }}. {{ user.email }}</li>{% endfor %}-->

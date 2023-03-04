@@ -32,9 +32,10 @@
                         {{ user.first_name|default:user.username }}
                     </option>
 
-                    <option class="hide-on-tablet" value="{% url 'authapp:edit' user.pk %}">личный кабинет</option>
+                    <option class="hide-on-tablet" value="{% url 'authapp:user-detail' user.pk %}">личный кабинет</option>
 
                     <option class="hide-on-tablet" value="{% url 'authapp:logout' %}">выход</option>
+                    <option class="hide-on-tablet" value="">{{ user.id }}</option>
 
                 </select>
                 </li>

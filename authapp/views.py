@@ -13,7 +13,6 @@ class CustomLoginView(LoginView):
     extra_context = {
         'title': 'Вход пользователя'
     }
-    # success_url = reverse_lazy('mainapp:index')
 
 
 class RegisterView(CreateView):

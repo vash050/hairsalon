@@ -25,5 +25,6 @@ urlpatterns = [
     path('', mainapp.index, name='index'),
     path('gallery', mainapp.Gallery.as_view(), name='gallery'),
     path('about', mainapp.about, name='about'),
-    path('contacts', mainapp.contacts, name='contacts')
+    path('contacts', mainapp.contacts, name='contacts'),
+    path('gallery/<int:pk>', mainapp.GalleryMaster.as_view(), name='gallery_master'),
 ]

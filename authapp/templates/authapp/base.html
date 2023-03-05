@@ -27,86 +27,15 @@
 
 {% include 'mainapp/includes/inc_main_menu.html' %}
 
-{% block conteiner %}
+{% block content %}
 
 {% endblock %}
 
 {% block footer %}
-<section class="flex form-section container">
-        <h2 class="h2 red-text">Записаться на услугу</h2>
-        <p class="nails-recomm-h ta-center">
-            Заполните форму ниже и мы свяжемся с вами для уточнения <br/>информации
-            и консультации по наличию свободного времени
-        </p>
-
-        <form action="#" class="flex form" id="formsend">
-            <input
-                    type="text"
-                    name="name"
-                    id="name"
-                    placeholder="Имя"
-                    class="input-form"
-            />
-
-            <input
-                    type="tel"
-                    name="phone"
-                    id="phone"
-                    placeholder="Телефон"
-                    class="input-form"
-            />
-            <input
-                    type="text"
-                    name="messenger"
-                    id="messenger"
-                    placeholder="Мессенджер"
-                    class="input-form"
-            />
-            <input
-                    type="text"
-                    name="service"
-                    id="service"
-                    placeholder="Желаемая услуга"
-                    class="input-form"
-            />
-            <input
-                    type="text"
-                    name="datetime"
-                    id="datetime"
-                    placeholder="Дата и время"
-                    class="input-form"
-            />
-
-            <input
-                    type="text"
-                    name="connection_type"
-                    id="connection_type"
-                    placeholder="Предпочтительный вид связи"
-                    class="input-form"
-            />
-
-            <label for="policy" class="label-form">
-                <input type="checkbox" name="policy" id="policy" required/>
-                <span
-                >Я подтверждаю согласие на обработку персональных данных в
-            соответствии с условиями
-            <span class="policy-span">Политики конфиденциальности</span></span
-                >
-            </label>
-
-            <button type="submit" class="button-form">Отправить</button>
-        </form>
-        <div id="thanks" class="flex thanks">
-            <img src="{% static 'img/close.svg' %}" alt="close" class="close-btn"/>
-            <p>Спасибо!</p>
-            <p>Мы свяжемся с вами в ближайшее время, чтобы подтвердить запись</p>
-            <p class="logo-font logo-thanks">BEAUTY</p>
-        </div>
-    </section>
     <footer class="container">
         <div class="section-footer flex">
             <div class="flex footer-container">
-                <a href="../../../mainapp/templates/mainapp/index.html">
+                <a href="{% url 'mainapp:index' %}">
                     <p class="logo-font logo-menu">BEAUTY</p>
                     <p class="logo-menu-p">САЛОН КРАСОТЫ</p>
                 </a>

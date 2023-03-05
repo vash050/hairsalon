@@ -9,6 +9,7 @@ from authapp.forms import CustomUserCreationForm
 
 class CustomLoginView(LoginView):
     redirect_authenticated_user = True
+    template_name = 'authapp/login.html'
     extra_context = {
         'title': 'Вход пользователя'
     }

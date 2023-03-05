@@ -753,3 +753,8 @@ input[type="checkbox"]:checked::before {
     margin-left: 45%;
 
 }
+
+.photo-work {
+    height: 500px;
+    margin-left: 40%;
+}

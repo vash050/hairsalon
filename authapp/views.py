@@ -4,7 +4,7 @@ from django.views.generic import TemplateView, UpdateView, DetailView, CreateVie
 from .models import User
 from django.contrib import messages
 from django.urls import reverse, reverse_lazy
-from authapp.forms import CustomUserCreationForm
+from authapp.forms import CustomUserCreationForm, CustomUserChangeForm
 
 
 class CustomLoginView(LoginView):
@@ -23,7 +23,8 @@ class RegisterView(CreateView):
 
 class UserEditView(UpdateView):
     model = User
-    fields = ('username', 'first_name', 'last_name', 'phone', 'email', 'avatar')
+    form_class = CustomUserChangeForm
+    # fields = ('username', 'first_name', 'last_name', 'phone', 'email', 'avatar')
     template_name_suffix = '_update_form'
     success_url = reverse_lazy('mainapp:index')
 

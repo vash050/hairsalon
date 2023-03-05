@@ -1,7 +1,8 @@
 {% load static %}
 
+{% block head %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -23,39 +24,43 @@
     <script src="{% static 'js/sidebar.js' %}" defer></script>
     <title>BEAUTY Салон</title>
 </head>
-<body>
-
+{% endblock %}
 {% include 'mainapp/includes/inc_main_menu.html' %}
+<body>
+{% include 'authapp/includes/messages.html' %}
+<section class="flex form-section container">
+    <h2 class="h2 red-text">{{ title }}</h2>
 
-{% block content %}
 
-{% endblock %}
+    {% block content %}
 
-{% block footer %}
-    <footer class="container">
-        <div class="section-footer flex">
-            <div class="flex footer-container">
-                <a href="{% url 'mainapp:index' %}">
-                    <p class="logo-font logo-menu">BEAUTY</p>
-                    <p class="logo-menu-p">САЛОН КРАСОТЫ</p>
-                </a>
-                <a href="#" class="footer-policy">Политика конфиденциальности</a>
+    {% endblock %}
 
-                <div class="flex menu-icons">
-                    <a href="#"
-                    ><img
-                            src="{% static 'img/telegram.svg' %}"
-                            class="social-media-img"
-                            alt="telegram"
-                    /></a>
-                    <a href="#"
-                    ><img src="{% static 'img/vk.svg' %}" class="social-media-img" alt="vkontakte"
-                    /></a>
+    {% block footer %}
+        <footer class="container">
+            <div class="section-footer flex">
+                <div class="flex footer-container">
+                    <a href="{% url 'mainapp:index' %}">
+                        <p class="logo-font logo-menu">BEAUTY</p>
+                        <p class="logo-menu-p">САЛОН КРАСОТЫ</p>
+                    </a>
+                    <a href="#" class="footer-policy">Политика конфиденциальности</a>
+
+                    <div class="flex menu-icons">
+                        <a href="#"
+                        ><img
+                                src="{% static 'img/telegram.svg' %}"
+                                class="social-media-img"
+                                alt="telegram"
+                        /></a>
+                        <a href="{% url 'social:begin' 'vk' %}"><img src="{% static 'img/vk.svg' %}"
+                         data-toggle="tooltip" class="social-media-img" alt="vkontakte"/></a>
+                    </div>
                 </div>
+                <a href="#" class="mobile-footer-policy desctop-hide">Политика конфиденциальности</a>
             </div>
-            <a href="#" class="mobile-footer-policy desctop-hide">Политика конфиденциальности</a>
-        </div>
-    </footer>
-{% endblock %}
+        </footer>
+    {% endblock %}
+</section>
 </body>
 </html>

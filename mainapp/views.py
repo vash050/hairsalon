@@ -16,6 +16,11 @@ def index(request):
 class Gallery(ListView):
     model = CompletedWork
 
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(object_list=None, **kwargs)
+        context['master_list'] = Master.objects.all()
+        return context
+
 
 def about(request):
     title = 'о нас'

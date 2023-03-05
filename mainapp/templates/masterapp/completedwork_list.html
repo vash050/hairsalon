@@ -8,7 +8,7 @@
         <div class="container flex gallery-header">
             {% for item in master_list %}
 
-            <a href="#" class="flex gallery-name">
+            <a href="{% url 'mainapp:gallery_master' item.pk %}" class="flex gallery-name">
                 Работы мастера<br/>
                 {{ item }}
 {#                <img src="{% static 'img/Arrow-left.svg' %}" alt="arrow"/>#}

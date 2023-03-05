@@ -13,13 +13,22 @@ def index(request):
     return render(request, 'mainapp/index.html', context=context)
 
 
-class Gallery(ListView):
-    model = CompletedWork
-
+class GalleryMixin:
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(object_list=None, **kwargs)
         context['master_list'] = Master.objects.all()
         return context
+
+
+class Gallery(GalleryMixin, ListView):
+    model = CompletedWork
+
+
+class GalleryMaster(GalleryMixin, ListView):
+    model = CompletedWork
+
+    def get_queryset(self):
+        return CompletedWork.objects.filter(master_id=self.kwargs['pk'])
 
 
 def about(request):

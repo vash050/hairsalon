@@ -8,21 +8,21 @@
         <div class="container flex gallery-header">
             {% for item in master_list %}
 
-            <a href="{% url 'mainapp:gallery_master' item.pk %}" class="flex gallery-name">
-                Работы мастера<br/>
-                {{ item }}
-{#                <img src="{% static 'img/Arrow-left.svg' %}" alt="arrow"/>#}
-            </a>
+                <a href="{% url 'mainapp:gallery_master' item.pk %}" class="flex gallery-name">
+                    Работы мастера<br/>
+                    {{ item }}
+                    {#                <img src="{% static 'img/Arrow-left.svg' %}" alt="arrow"/>#}
+                </a>
             {% endfor %}
-{#            <div class="flex gallery-name active">#}
-{#                Работы мастера<br/>#}
-{#                Анастасии#}
-{#            </div>#}
-{#            <a href="#" class="flex gallery-name">#}
-{#                Работы мастера<br/>#}
-{#                Полины#}
-{#                <img src="{% static 'img/Arrow-right.svg' %}" alt="arrow"/>#}
-{#            </a>#}
+            {#            <div class="flex gallery-name active">#}
+            {#                Работы мастера<br/>#}
+            {#                Анастасии#}
+            {#            </div>#}
+            {#            <a href="#" class="flex gallery-name">#}
+            {#                Работы мастера<br/>#}
+            {#                Полины#}
+            {#                <img src="{% static 'img/Arrow-right.svg' %}" alt="arrow"/>#}
+            {#            </a>#}
         </div>
         <!-- <div class="container"> -->
         <!-- Slider  -->
@@ -31,15 +31,19 @@
             <div class="swiper-wrapper">
                 <!-- Slides -->
                 {% for frame in object_list %}
-                    <div class="swiper-slide swiper-slide-gallery">
-                        <img
-                                src="/media/{{ frame.photo }}"
-                                class="gallery-img"
-                                alt="Салон BEAUTY"
-                        />
 
-                        <p class="gallery-description">Описание работы</p>
+                    <div class="swiper-slide swiper-slide-gallery">
+                        <a href="{% url 'masterapp:master_work'  frame.pk %}">
+                            <img
+                                    src="/media/{{ frame.photo }}"
+                                    class="gallery-img"
+                                    alt="Салон BEAUTY"
+                            />
+
+                            <p class="gallery-description">Описание работы</p>
+                        </a>
                     </div>
+
                 {% endfor %}
                 {#                <div class="swiper-slide swiper-slide-gallery">#}
                 {#                    <img#}

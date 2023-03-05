@@ -41,3 +41,15 @@ def contacts(request):
     title = 'контакты'
     context = {"title": title}
     return render(request, 'mainapp/contacts.html', context=context)
+
+
+def service(request):
+    title = 'услуги'
+    context = {"title": title}
+    return render(request, 'mainapp/service.html', context=context)
+
+
+def price(request):
+    title = 'price'
+    context = {"title": title}
+    return render(request, 'mainapp/price.html', context=context)

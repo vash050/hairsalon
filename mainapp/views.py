@@ -2,7 +2,6 @@ from django.contrib.auth.models import AnonymousUser
 from django.http import Http404
 from django.shortcuts import render
 from django.views.generic import ListView
-from pkg_resources import _
 
 from masterapp.models import Master, CompletedWork
 

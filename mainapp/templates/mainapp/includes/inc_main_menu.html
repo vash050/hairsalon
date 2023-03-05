@@ -6,10 +6,6 @@
             <li><a href="{% url 'mainapp:gallery' %}"> Услуги</a></li>
             <li><a href="#">Прайс</a></li>
             <li><a href="{% url 'mainapp:about' %}">О нас</a></li>
-            {% if user.is_authenticated and user != AnonymousUser and master %}
-                <li class="hide-on-tablet"><a href="{% url 'masterapp:master_page' master.pk %}">Кабинет мастера</a>
-                </li>
-            {% endif %}
         </ul>
     </nav>
     <a href="{% url 'mainapp:index' %}" class="logo-block">

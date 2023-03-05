@@ -36,3 +36,9 @@ class UserEditView(UpdateView):
 class UserDetailView(DetailView):
     model = User
     template_name = 'authapp/user_detail.html'
+
+    def get_object(self, queryset=None):
+        return self.request.user
+
+    def get_success_url(self):
+        return reverse_lazy('authapp:edit', args=[self.request.user.pk])

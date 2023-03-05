@@ -15,6 +15,11 @@ class CustomUserCreationForm(UserCreationForm):
             'avatar'
         )
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field_name, field in self.fields.items():
+            field.widget.attrs["class"] = "input-form"
+
 
 class CustomUserChangeForm(UserChangeForm):
 
@@ -28,3 +33,8 @@ class CustomUserChangeForm(UserChangeForm):
             'last_name',
             'avatar'
         )
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field_name, field in self.fields.items():
+            field.widget.attrs["class"] = "input-form"

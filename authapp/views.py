@@ -24,9 +24,13 @@ class RegisterView(CreateView):
 class UserEditView(UpdateView):
     model = User
     form_class = CustomUserChangeForm
-    # fields = ('username', 'first_name', 'last_name', 'phone', 'email', 'avatar')
-    template_name_suffix = '_update_form'
-    success_url = reverse_lazy('mainapp:index')
+    template_name_suffix = '_edit'
+
+    def get_object(self, queryset=None):
+        return self.request.user
+
+    def get_success_url(self):
+        return reverse_lazy('authapp:edit', args=[self.request.user.pk])
 
 
 class UserDetailView(DetailView):

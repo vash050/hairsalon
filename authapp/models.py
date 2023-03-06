@@ -16,6 +16,10 @@ class User(AbstractUser):
         verbose_name = 'Пользователь'
         verbose_name_plural = 'Пользователи'
 
+    # def get_absolute_url(self):
+    #     from django.urls import reverse
+    #     return reverse('authapp.views.details', args=[str(self.id)])
+
 
 class UserProfile(models.Model):
     id = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)

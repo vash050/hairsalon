@@ -18,6 +18,9 @@ class CustomLoginView(LoginView):
 class RegisterView(CreateView):
     model = User
     form_class = CustomUserCreationForm
+    extra_context = {
+        'title': 'Регистрация пользователя'
+    }
     success_url = reverse_lazy('mainapp:index')
 
 
@@ -25,6 +28,9 @@ class UserEditView(UpdateView):
     model = User
     form_class = CustomUserChangeForm
     template_name_suffix = '_edit'
+    extra_context = {
+        'title': 'Редактирование данных пользователя'
+    }
 
     def get_object(self, queryset=None):
         return self.request.user

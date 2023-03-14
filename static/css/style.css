@@ -761,7 +761,8 @@ input[type="checkbox"]:checked::before {
 
 .master_works {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    margin-bottom: 20px;
 }
 
 .master_work {

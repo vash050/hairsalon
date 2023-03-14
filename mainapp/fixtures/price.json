@@ -1,0 +1,322 @@
+[
+{
+    "model": "mainapp.hall",
+    "pk": 1,
+    "fields": {
+        "name": "Парикмахерский зал",
+        "short_description": "",
+        "full_description": "",
+        "is_active": true
+    }
+},
+{
+    "model": "mainapp.hall",
+    "pk": 2,
+    "fields": {
+        "name": "Ногтевой сервис",
+        "short_description": "",
+        "full_description": "",
+        "is_active": true
+    }
+},
+{
+    "model": "mainapp.categoryservice",
+    "pk": 1,
+    "fields": {
+        "name": "Стрижки",
+        "short_description": "",
+        "full_description": "",
+        "hall": 1,
+        "is_active": true
+    }
+},
+{
+    "model": "mainapp.categoryservice",
+    "pk": 2,
+    "fields": {
+        "name": "Окрашивание",
+        "short_description": "",
+        "full_description": "",
+        "hall": 1,
+        "is_active": true
+    }
+},
+{
+    "model": "mainapp.categoryservice",
+    "pk": 3,
+    "fields": {
+        "name": "Прически",
+        "short_description": "",
+        "full_description": "",
+        "hall": 1,
+        "is_active": true
+    }
+},
+{
+    "model": "mainapp.categoryservice",
+    "pk": 4,
+    "fields": {
+        "name": "Уход за волосами",
+        "short_description": "",
+        "full_description": "",
+        "hall": 1,
+        "is_active": true
+    }
+},
+{
+    "model": "mainapp.categoryservice",
+    "pk": 5,
+    "fields": {
+        "name": "Маникюр",
+        "short_description": "",
+        "full_description": "",
+        "hall": 2,
+        "is_active": true
+    }
+},
+{
+    "model": "mainapp.categoryservice",
+    "pk": 6,
+    "fields": {
+        "name": "Педикюр",
+        "short_description": "",
+        "full_description": "",
+        "hall": 2,
+        "is_active": true
+    }
+},
+{
+    "model": "mainapp.service",
+    "pk": 1,
+    "fields": {
+        "name": "Стрижка женская",
+        "short_description": "В услугу входит: мытье головы, стрижка, сушка с использованием укладочных средств",
+        "full_description": "",
+        "category_service": 1,
+        "price": "900.00",
+        "duration": 60,
+        "is_active": true
+    }
+},
+{
+    "model": "mainapp.service",
+    "pk": 2,
+    "fields": {
+        "name": "Укладка",
+        "short_description": "В услугу входит: мытье головы",
+        "full_description": "",
+        "category_service": 3,
+        "price": "600.00",
+        "duration": 30,
+        "is_active": true
+    }
+},
+{
+    "model": "mainapp.service",
+    "pk": 3,
+    "fields": {
+        "name": "Сложная укладка",
+        "short_description": "стайлеп, щипцы",
+        "full_description": "",
+        "category_service": 3,
+        "price": "800.00",
+        "duration": 0,
+        "is_active": true
+    }
+},
+{
+    "model": "mainapp.service",
+    "pk": 4,
+    "fields": {
+        "name": "Прическа",
+        "short_description": "В услугу входит: мытье головы",
+        "full_description": "",
+        "category_service": 3,
+        "price": "1500.00",
+        "duration": 0,
+        "is_active": true
+    }
+},
+{
+    "model": "mainapp.service",
+    "pk": 5,
+    "fields": {
+        "name": "Окрашивание волос",
+        "short_description": "В услугу входит: мытье головы и сушка волос с использованием укладочных средств",
+        "full_description": "",
+        "category_service": 2,
+        "price": "3000.00",
+        "duration": 90,
+        "is_active": true
+    }
+},
+{
+    "model": "mainapp.service",
+    "pk": 6,
+    "fields": {
+        "name": "Сложные виды окрашивания",
+        "short_description": "",
+        "full_description": "",
+        "category_service": 2,
+        "price": "5000.00",
+        "duration": 0,
+        "is_active": true
+    }
+},
+{
+    "model": "mainapp.service",
+    "pk": 7,
+    "fields": {
+        "name": "Уход за волосами от Wella",
+        "short_description": "В услугу входит: мытье головы, уход, укладка волос",
+        "full_description": "",
+        "category_service": 4,
+        "price": "1300.00",
+        "duration": 90,
+        "is_active": true
+    }
+},
+{
+    "model": "mainapp.service",
+    "pk": 8,
+    "fields": {
+        "name": "Маникюр аппаратный, комбинированный",
+        "short_description": "В услугу входит: маникюр, массаж кистей рук с использованием масла для кутикулы",
+        "full_description": "",
+        "category_service": 5,
+        "price": "0.00",
+        "duration": 0,
+        "is_active": true
+    }
+},
+{
+    "model": "mainapp.service",
+    "pk": 9,
+    "fields": {
+        "name": "Женский маникюр",
+        "short_description": "",
+        "full_description": "",
+        "category_service": 5,
+        "price": "700.00",
+        "duration": 90,
+        "is_active": true
+    }
+},
+{
+    "model": "mainapp.service",
+    "pk": 10,
+    "fields": {
+        "name": "Мужской маникюр",
+        "short_description": "",
+        "full_description": "",
+        "category_service": 5,
+        "price": "700.00",
+        "duration": 90,
+        "is_active": true
+    }
+},
+{
+    "model": "mainapp.service",
+    "pk": 11,
+    "fields": {
+        "name": "Детский маникюр",
+        "short_description": "",
+        "full_description": "",
+        "category_service": 5,
+        "price": "400.00",
+        "duration": 90,
+        "is_active": true
+    }
+},
+{
+    "model": "mainapp.service",
+    "pk": 12,
+    "fields": {
+        "name": "Покрытие гель-лак",
+        "short_description": "В услугу входит снятие старого покрытия гель-лак",
+        "full_description": "Покрытие гель-лак без выполнения услуги маникюра Не выполняется!",
+        "category_service": 5,
+        "price": "800.00",
+        "duration": 60,
+        "is_active": true
+    }
+},
+{
+    "model": "mainapp.service",
+    "pk": 13,
+    "fields": {
+        "name": "Дизайн ногтей",
+        "short_description": "Возможность выполнения дизайна и стоимость обсуждаются индивидуально",
+        "full_description": "",
+        "category_service": 5,
+        "price": "0.00",
+        "duration": 0,
+        "is_active": true
+    }
+},
+{
+    "model": "mainapp.service",
+    "pk": 14,
+    "fields": {
+        "name": "Маникюр с покрытием гель-лак",
+        "short_description": "",
+        "full_description": "",
+        "category_service": 5,
+        "price": "1500.00",
+        "duration": 120,
+        "is_active": true
+    }
+},
+{
+    "model": "mainapp.service",
+    "pk": 15,
+    "fields": {
+        "name": "Педикюр",
+        "short_description": "В услугу входит: педикюр, массаж стоп",
+        "full_description": "",
+        "category_service": 6,
+        "price": "0.00",
+        "duration": 0,
+        "is_active": true
+    }
+},
+{
+    "model": "mainapp.service",
+    "pk": 16,
+    "fields": {
+        "name": "Женский и мужской",
+        "short_description": "",
+        "full_description": "",
+        "category_service": 6,
+        "price": "1500.00",
+        "duration": 120,
+        "is_active": true
+    }
+},
+{
+    "model": "mainapp.service",
+    "pk": 17,
+    "fields": {
+        "name": "Педикюр с покрытием гель-лак",
+        "short_description": "",
+        "full_description": "",
+        "category_service": 6,
+        "price": "2300.00",
+        "duration": 120,
+        "is_active": true
+    }
+},
+{
+    "model": "mainapp.service",
+    "pk": 18,
+    "fields": {
+        "name": "Экспресс педикюр",
+        "short_description": "В услугу входит: обработка пальчиков или стоп, массаж стоп",
+        "full_description": "",
+        "category_service": 6,
+        "price": "1000.00",
+        "duration": 0,
+        "is_active": true
+    }
+}
+]

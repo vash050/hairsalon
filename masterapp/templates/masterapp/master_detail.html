@@ -29,13 +29,15 @@
         </div>
     </div>
     <hr>
-    <div>
+    <div class="master_works">
 
         {% for work in  object.completedwork_set.all %}
-            <h2 class="h2 red-text">{{ work }}</h2>
-            <h3 class="h3 red-text">{{ work.service_id.name }}</h3>
-            <img src="/media/{{ work.photo }}" class="photo-master">
-            <h3 class="h3 red-text">{{ work.full_description }}</h3>
+            <div class="master_work">
+                <h2 class="h2 red-text">{{ work }}</h2>
+                <h3 class="h3 red-text">{{ work.service_id.name }}</h3>
+                <img src="/media/{{ work.photo }}" class="photo-work">
+                <h3 class="h3 red-text">{{ work.full_description }}</h3>
+            </div>
         {% endfor %}
     </div>
 

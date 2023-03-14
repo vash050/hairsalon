@@ -48,3 +48,6 @@ class UserDetailView(DetailView):
 
     def get_success_url(self):
         return reverse_lazy('authapp:edit', args=[self.request.user.pk])
+
+    # def get_context_data(self, **kwargs):
+    #     print(self.request.user.pk)

@@ -754,7 +754,27 @@ input[type="checkbox"]:checked::before {
 
 }
 
-.photo-work {
+/*.photo-work {*/
+/*    height: 500px;*/
+/*    margin-left: 40%;*/
+/*}*/
+
+.master_works {
+    display: flex;
+    justify-content: space-between;
+}
+
+.master_work {
     height: 500px;
-    margin-left: 40%;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.photo-work {
+    height: 250px;
+    display: flex;
+    justify-content: center;
+
 }

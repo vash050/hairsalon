@@ -19,6 +19,7 @@ from django.urls import path
 import mainapp.views as mainapp
 import masterapp.views as masterapp
 
+
 app_name = 'mainapp'
 
 urlpatterns = [

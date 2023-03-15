@@ -1,0 +1,25 @@
+{% extends 'masterapp/base.html' %}
+{% load static %}
+
+{% block conteiner %}
+    <div>
+        <section class="flex form-section container">
+            <h2 class="h2 red-text">
+                Редактирования работы
+            </h2>
+            <form method="POST" class="flex form" id="formsend" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                {% for el in form %}
+                    <div class="form-block">
+                        <label for="{{ el.for }}">{{ el.label }}:</label>
+                        {{ el }}
+                    </div>
+                {% endfor %}
+
+                <input type="submit" value="сохранить" class="button-form btn btn-primary btn-block">
+            </form>
+        </section>
+
+    </div>
+{% endblock %}

@@ -42,6 +42,9 @@
                     <h3 class="h3 red-text">{{ work.service_id.name }}</h3>
                     <img src="/media/{{ work.photo }}" class="photo-work">
                     <h3 class="h3 red-text">{{ work.full_description }}</h3>
+                <button type="button">
+                    <a href="{% url 'masterapp:update_work' work.pk %}">изменить работу</a>
+                </button>
                     <button type="button">
                         <a href="{% url 'masterapp:delete_work' work.pk %}">
                             {% if work.is_active%}

@@ -26,4 +26,5 @@ urlpatterns = [
     path('master-update/<int:pk>', masterapp.MasterUpdate.as_view(), name='master_update'),
     path('master-create-work/', masterapp.CompletedWorkCreate.as_view(), name='master_create_work'),
     path('master-delete-work/<int:pk>', masterapp.WorkDelete.as_view(), name='delete_work'),
+    path('master-update-work/<int:pk>', masterapp.WorkUpdate.as_view(), name='update_work'),
 ]

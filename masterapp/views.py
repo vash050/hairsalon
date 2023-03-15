@@ -5,7 +5,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, DetailView, UpdateView, CreateView, TemplateView, DeleteView
 
-from masterapp.forms import UpdateMasterDetailForm, CompletedWorkCreateForm, UpdateUserForm
+from masterapp.forms import UpdateMasterDetailForm, CompletedWorkCreateForm, UpdateUserForm, CompletedWorkUpdateForm
 from masterapp.models import CompletedWork, Master
 
 
@@ -69,12 +69,18 @@ class CompletedWorkCreate(CreateView):
             return self.form_invalid(form)
 
 
+class WorkUpdate(UpdateView):
+    model = CompletedWork
+    form_class = CompletedWorkUpdateForm
+    template_name = 'masterapp/completedwork_update_form.html'
+    success_url = reverse_lazy('mainapp:gallery')
+
+
 class WorkDelete(DeleteView):
     model = CompletedWork
     success_url = reverse_lazy('mainapp:index')
 
     def delete(self, request, *args, **kwargs):
-
         self.object = self.get_object()
         success_url = self.get_success_url()
         self.object.is_active = False

@@ -784,7 +784,7 @@ input[type="checkbox"]:checked::before {
 }
 
 .photo-work {
-    height: 400px;
+    height: 200px;
     display: flex;
     justify-content: center;
 

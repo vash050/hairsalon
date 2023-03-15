@@ -5,15 +5,15 @@
 
 {% block conteiner %}
     <div class="master_work_container">
-{#        <div class="master_work_item">#}
+        {#        <div class="master_work_item">#}
 
-            <h2 class="h2 red-text">{{ object.service_id.name }}</h2>
-            <img src="/media/{{ object.photo }}" class="photo-work">
-            <h3 class="h3 red-text">{{ object.short_description }}</h3>
-            <p class="nails-recomm-h ta-center">{{ object.full_description }}</p>
-            <h4 class="h3 red-text">Мастер: {{ object.master_id.user_id.first_name }}</h4>
+        <h2 class="h2 red-text">{{ object.service_id.name }}</h2>
+        <img src="/media/{{ object.photo }}" class="photo-work">
+        <h3 class="h3 red-text">{{ object.short_description }}</h3>
+        <p class="nails-recomm-h ta-center">{{ object.full_description }}</p>
+        <h4 class="h3 red-text">Мастер: {{ object.master_id.user_id.first_name }}</h4>
 
-        </div>
+    </div>
     </div>
 
 {% endblock %}

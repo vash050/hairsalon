@@ -1,0 +1,27 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+
+
+{% block conteiner %}
+    <div>
+        <section class="flex form-section container">
+            <h2 class="h2 red-text">
+                удаление работы
+            </h2>
+            <form method="POST" class="flex form" id="formsend" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="master_work">
+                    <h2 class="h2 red-text">{{ object}}</h2>
+                    <h3 class="h3 red-text">{{ object.service_id.name }}</h3>
+                    <img src="/media/{{ object.photo }}" class="photo-work">
+                    <h3 class="h3 red-text">{{ object.full_description }}</h3>
+
+                    <input type="submit" value="удалить" class="button-form btn btn-primary btn-block">
+            </form>
+        </section>
+
+    </div>
+
+
+{% endblock %}

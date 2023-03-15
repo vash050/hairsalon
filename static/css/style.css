@@ -773,9 +773,26 @@ input[type="checkbox"]:checked::before {
     justify-content: space-between;
 }
 
+
+
+.master_work_item {
+    height: 500px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
 .photo-work {
-    height: 250px;
+    height: 400px;
     display: flex;
     justify-content: center;
 
+}
+
+.master_work_container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
 }

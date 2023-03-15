@@ -32,14 +32,24 @@
     <div class="master_works">
 
         {% for work in  object.completedwork_set.all %}
+
             <a href="{% url 'masterapp:master_work' work.pk %}">
                 <div class="master_work">
+                    {% if work.is_active is False %}
+                        <h3>Работа удалена</h3>
+                    {% endif %}
                     <h2 class="h2 red-text">{{ work }}</h2>
                     <h3 class="h3 red-text">{{ work.service_id.name }}</h3>
                     <img src="/media/{{ work.photo }}" class="photo-work">
                     <h3 class="h3 red-text">{{ work.full_description }}</h3>
                     <button type="button">
-                        <a href="{% url 'masterapp:delete_work' work.pk %}">удалить работу</a>
+                        <a href="{% url 'masterapp:delete_work' work.pk %}">
+                            {% if work.is_active%}
+                                <h3>удалить работу</h3>
+                                {% else %}
+                                <h3>восстановить работу</h3>
+                            {% endif %}
+                        </a>
                     </button>
                 </div>
             </a>

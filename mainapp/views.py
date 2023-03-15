@@ -22,12 +22,15 @@ class GalleryMixin:
 class Gallery(GalleryMixin, ListView):
     model = CompletedWork
 
+    def get_queryset(self):
+        return CompletedWork.objects.all().filter(is_active=True)
+
 
 class GalleryMaster(GalleryMixin, ListView):
     model = CompletedWork
 
     def get_queryset(self):
-        return CompletedWork.objects.filter(master_id=self.kwargs['pk'])
+        return CompletedWork.objects.filter(master_id=self.kwargs['pk']).filter(is_active=True)
 
 
 def about(request):

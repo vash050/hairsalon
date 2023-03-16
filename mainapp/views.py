@@ -3,6 +3,7 @@ from django.http import Http404
 from django.shortcuts import render
 from django.views.generic import ListView
 
+from mainapp.models import CategoryService
 from masterapp.models import Master, CompletedWork
 
 
@@ -45,13 +46,17 @@ def contacts(request):
     return render(request, 'mainapp/contacts.html', context=context)
 
 
-def service(request):
-    title = 'услуги'
-    context = {"title": title}
-    return render(request, 'mainapp/service.html', context=context)
+# def service(request):
+#     title = 'услуги'
+#     context = {"title": title}
+#     return render(request, 'mainapp/categoryservice_list.html', context=context)
 
 
 def price(request):
     title = 'price'
     context = {"title": title}
     return render(request, 'mainapp/price.html', context=context)
+
+
+class ServiceCategoryPage(ListView):
+    model = CategoryService

@@ -17,6 +17,7 @@ class Hall(models.Model):
 
 class CategoryService(models.Model):
     name = models.CharField(max_length=100)
+    photo = models.ImageField(upload_to='category_service', blank=True)
     short_description = models.TextField(blank=True)
     full_description = models.TextField(blank=True)
     hall = models.ForeignKey(to=Hall, on_delete=models.CASCADE)

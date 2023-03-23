@@ -46,6 +46,8 @@ class GalleryCategoryService(GalleryMixin, ListView):
 def about(request):
     title = 'о нас'
     context = {"title": title}
+    masters = Master.objects.all()
+    context['master_list'] = masters
     return render(request, 'mainapp/about_us.html', context=context)
 
 

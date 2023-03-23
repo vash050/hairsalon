@@ -87,42 +87,51 @@
     <section class="profi-section">
         <h2 class="h2">Наши мастера</h2>
         <div class="container grid grid--3-cols profi hide-mobil hide-important desctop-show">
-            <div class="services-block">
-                <img
-                        src="{% static 'img/natalja.jpg' %}"
-                        class="services-block-img"
-                        alt="Мастер салона BEAUTY"
-                />
-                <a href="#" class="profi-description">Мои работы</a>
-            </div>
-            <div class="services-block">
-                <img
-                        src="{% static 'img/anastasia.jpg' %}"
-                        class="services-block-img"
-                        alt="Мастер салона BEAUTY"
-                />
-                <a href="#" class="profi-description">Мои работы</a>
-            </div>
-            <div class="services-block">
-                <img
-                        src="{% static 'img/polina.jpg' %}"
-                        class="services-block-img"
-                        alt="Мастер салона BEAUTY"
-                />
-                <a href="#" class="profi-description">Мои работы</a>
-            </div>
-            <div>
-                <p class="profi-name">Наталья</p>
-                <p class="red-text profi-work">Мастер ногтевого сервиса</p>
-            </div>
-            <div>
-                <p class="profi-name">Анастасия</p>
-                <p class="red-text profi-work">Мастер-парикмахер</p>
-            </div>
-            <div>
-                <p class="profi-name">Полина</p>
-                <p class="red-text profi-work">Мастер-парикмахер</p>
-            </div>
+
+            {% for master in master_list %}
+                <div>
+                    <div class="services-block">
+                        <img
+                                src="/media/{{ master.user_id.avatar }}"
+                                class="services-block-img"
+                                alt="Мастер салона BEAUTY"
+                        />
+                        <a href="{% url 'mainapp:gallery_master' master.pk %}" class="profi-description">Мои работы</a>
+                    </div>
+                    <div>
+                        <p class="profi-name">{{ master.user_id.first_name }}</p>
+                        <p class="red-text profi-work">{{ master.master_profissions.first }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+            {#            <div class="services-block">#}
+            {#                <img#}
+            {#                        src="{% static 'img/anastasia.jpg' %}"#}
+            {#                        class="services-block-img"#}
+            {#                        alt="Мастер салона BEAUTY"#}
+            {#                />#}
+            {#                <a href="#" class="profi-description">Мои работы</a>#}
+            {#            </div>#}
+            {#            <div class="services-block">#}
+            {#                <img#}
+            {#                        src="{% static 'img/polina.jpg' %}"#}
+            {#                        class="services-block-img"#}
+            {#                        alt="Мастер салона BEAUTY"#}
+            {#                />#}
+            {#                <a href="#" class="profi-description">Мои работы</a>#}
+            {#            </div>#}
+            {#            <div>#}
+            {#                <p class="profi-name">Наталья</p>#}
+            {#                <p class="red-text profi-work">Мастер ногтевого сервиса</p>#}
+            {#            </div>#}
+            {#            <div>#}
+            {#                <p class="profi-name">Анастасия</p>#}
+            {#                <p class="red-text profi-work">Мастер-парикмахер</p>#}
+            {#            </div>#}
+            {#            <div>#}
+            {#                <p class="profi-name">Полина</p>#}
+            {#                <p class="red-text profi-work">Мастер-парикмахер</p>#}
+            {#            </div>#}
         </div>
         <div class="tablet-swiper-profi desctop-hide">
             <div class="swiper swiper-profi desctop-hide">

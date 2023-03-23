@@ -8,11 +8,27 @@
         <h3 class="h3 red-text">{{ object.last_name }}</h3>
         <h3 class="h3 red-text">{{ object.phone }}</h3>
         <h3 class="h3 red-text">{{ object.email }}</h3>
-
+        <br>
+        <br>
+        {% if user_services == "" %}
+            <h3 class="h3 red-text">'Не оказывались услуги'</h3>
+        {% else %}
+            <div class="flex price-row">
+                <div class="price-block left">Наименование</div>
+                <div class="price-block middle">Дата</div>
+                <div class="price-block middle">Цена</div>
+            </div>
+            {% for service in user_services %}
+            <div class="flex price-row">
+                <div class="price-block price-big left">{{ service.service_id.name }}</div>
+                <div class="price-block middle red-text price-end">{{ service.date_service }}</div>
+                <div class="price-block red-text price-end">{{ service.service_id.price }}</div>
+            </div>
+            {% endfor %}
+        {% endif %}
         <div class="nails-recomm-h ta-center">
             <button>
                 <a href="{% url 'authapp:edit' user.pk %}"> редактировать данные</a>
-
             </button>
             {% if object.is_staff %}
                 <button type="button">

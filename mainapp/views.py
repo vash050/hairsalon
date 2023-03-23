@@ -10,6 +10,8 @@ from masterapp.models import Master, CompletedWork
 def index(request):
     title = 'главная'
     context = {"title": title}
+    service = CategoryService.objects.all()[:6]
+    context['service'] = service
     return render(request, 'mainapp/index.html', context=context)
 
 
@@ -44,12 +46,6 @@ def contacts(request):
     title = 'контакты'
     context = {"title": title}
     return render(request, 'mainapp/contacts.html', context=context)
-
-
-# def service(request):
-#     title = 'услуги'
-#     context = {"title": title}
-#     return render(request, 'mainapp/categoryservice_list.html', context=context)
 
 
 def price(request):

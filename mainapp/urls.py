@@ -28,6 +28,7 @@ urlpatterns = [
     path('about', mainapp.about, name='about'),
     path('contacts', mainapp.contacts, name='contacts'),
     path('gallery/<int:pk>', mainapp.GalleryMaster.as_view(), name='gallery_master'),
+    path('gallery/category/<int:pk>', mainapp.GalleryCategoryService.as_view(), name='gallery_category_service'),
     path('service', mainapp.ServiceCategoryPage.as_view(), name='service'),
     path('price', mainapp.price, name='price'),
 ]

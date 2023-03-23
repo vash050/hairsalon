@@ -33,6 +33,7 @@
                 {% for frame in object_list %}
 
                     <div class="swiper-slide swiper-slide-gallery">
+
                         <a href="{% url 'masterapp:master_work'  frame.pk %}">
                             <img
                                     src="/media/{{ frame.photo }}"

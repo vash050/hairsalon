@@ -38,14 +38,16 @@
         <div class="grid grid--3-cols">
 
             {% for el in service %}
-                <div class="services-block">
-                    <img
-                            src="/media/{{ el.photo }}"
-                            class="services-block-img"
-                            alt="Стрижки"
-                    />
-                    <p class="service-description">{{ el.name }}</p>
-                </div>
+                <a href="{% url 'mainapp:gallery_category_service' el.pk %}">
+                    <div class="services-block">
+                        <img
+                                src="/media/{{ el.photo }}"
+                                class="services-block-img"
+                                alt="Стрижки"
+                        />
+                        <p class="service-description">{{ el.name }}</p>
+                    </div>
+                </a>
             {% endfor %}
         </div>
     </section>

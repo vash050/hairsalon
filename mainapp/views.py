@@ -36,6 +36,13 @@ class GalleryMaster(GalleryMixin, ListView):
         return CompletedWork.objects.filter(master_id=self.kwargs['pk']).filter(is_active=True)
 
 
+class GalleryCategoryService(GalleryMixin, ListView):
+    model = CompletedWork
+
+    def get_queryset(self):
+        return CompletedWork.objects.filter(service_id__category_service_id=self.kwargs['pk']).filter(is_active=True)
+
+
 def about(request):
     title = 'о нас'
     context = {"title": title}

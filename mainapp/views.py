@@ -1,9 +1,9 @@
 from django.contrib.auth.models import AnonymousUser
 from django.http import Http404
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 
-from mainapp.models import CategoryService
+from mainapp.models import CategoryService, Service
 from masterapp.models import Master, CompletedWork
 
 
@@ -59,7 +59,7 @@ def contacts(request):
 
 def price(request):
     title = 'price'
-    context = {"title": title}
+    context = {"title": title, 'services': Service.objects.all()}
     return render(request, 'mainapp/price.html', context=context)
 
 

@@ -16,7 +16,7 @@
         {% endfor %}
 
         <p class="nails-recomm-h ta-center">{{ object.date_start_work }}</p>
-        <h4 class="h3 red-text">Статус: {{ object.is_stuff }}</h4>
+        <h4 class="h3 red-text">Статус: {{ object.get_is_stuff }}</h4>
         <div class="nails-recomm-h ta-center">
             <button>
                 <a href="{% url 'masterapp:master_update' master.pk %}"> редактировать данные</a>

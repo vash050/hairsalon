@@ -1,5 +1,5 @@
 from django.db import models
-from django.utils.translation import gettext_lazy as _
+from django.utils.translation import gettext_lazy as _, ugettext_lazy
 
 from authapp.models import User
 from mainapp.models import Service
@@ -27,6 +27,9 @@ class Master(models.Model):
 
     def __str__(self):
         return self.user_id.first_name
+
+    def get_is_stuff(self):
+        return self.Stuff(self.is_stuff).name
 
 
 class Profession(models.Model):

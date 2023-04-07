@@ -39,7 +39,8 @@
             и консультации по наличию свободного времени
         </p>
 
-        <form action="#" class="flex form" id="formsend">
+        <form action="#" class="flex form" id="formsend" method="post">
+            {% csrf_token %}
             <input
                     type="text"
                     name="name"
@@ -55,13 +56,13 @@
                     placeholder="Телефон"
                     class="input-form"
             />
-            <input
-                    type="text"
-                    name="messenger"
-                    id="messenger"
-                    placeholder="Мессенджер"
-                    class="input-form"
-            />
+<!--            <input-->
+<!--                    type="text"-->
+<!--                    name="messenger"-->
+<!--                    id="messenger"-->
+<!--                    placeholder="Мессенджер"-->
+<!--                    class="input-form"-->
+<!--            />-->
             <select
                     type="text"
                     name="service"

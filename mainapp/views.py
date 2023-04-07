@@ -69,3 +69,10 @@ def price(request):
 
 class ServiceCategoryPage(ListView):
     model = CategoryService
+
+
+def add_service_to_user(request):
+    title = 'главная'
+    context = {"title": title}
+
+    return render(request, 'mainapp/index.html', context=context)

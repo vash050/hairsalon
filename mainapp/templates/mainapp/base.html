@@ -62,13 +62,18 @@
                     placeholder="Мессенджер"
                     class="input-form"
             />
-            <input
+            <select
                     type="text"
                     name="service"
                     id="service"
                     placeholder="Желаемая услуга"
                     class="input-form"
-            />
+            >
+                <option value="">Желаемая услуга</option>
+                {% for serv in services %}
+                    <option value={{ serv.id }}>{{ serv.name }}</option>
+                {% endfor %}
+            </select>
             <input
                     type="text"
                     name="datetime"
@@ -77,13 +82,18 @@
                     class="input-form"
             />
 
-            <input
+            <select
                     type="text"
                     name="connection_type"
                     id="connection_type"
                     placeholder="Предпочтительный вид связи"
                     class="input-form"
-            />
+            >
+                <option value="">Предпочтительный вид связи</option>
+                {% for messanger in messangers %}
+                <option value={{ messanger.0 }}>{{ messanger.1 }}</option>
+                {% endfor %}
+            </select>
 
             <label for="policy" class="label-form">
                 <input type="checkbox" name="policy" id="policy" required/>

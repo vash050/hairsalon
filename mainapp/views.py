@@ -5,12 +5,16 @@ from django.views.generic import ListView, DetailView
 
 from mainapp.models import CategoryService, Service
 from masterapp.models import Master, CompletedWork
+from authapp.models import UserProfile
 
 
 def index(request):
     title = 'главная'
     context = {"title": title}
     service = CategoryService.objects.all()[:6]
+    services = CategoryService.objects.all()
+    context['messangers'] = UserProfile.CHOICES
+    context['services'] = services
     context['service'] = service
     return render(request, 'mainapp/index.html', context=context)
 

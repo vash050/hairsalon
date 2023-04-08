@@ -24,7 +24,7 @@ class User(AbstractUser):
 class UserProfile(models.Model):
     id = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     date_born = models.DateField(blank=True)
-    telegram = models.CharField(max_length=50)
+    telegram = models.CharField(max_length=50, blank=True)
     additions = models.TextField(blank=True)
     CHOICES = (
         ('TL', 'Телефон'),

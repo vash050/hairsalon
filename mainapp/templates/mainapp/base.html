@@ -21,7 +21,10 @@
     <script src="{% static 'js/gsapCurrent.js' %}" defer></script>
     <script src="{% static 'js/priceShow.js' %}" defer></script>
     <script src="{% static 'js/sidebar.js' %}" defer></script>
+    <script src="{% static 'js/regexp.js' %}" defer></script>
     <title>BEAUTY Салон</title>
+    <script>
+</script>
 </head>
 <body>
 
@@ -32,6 +35,7 @@
 {% endblock %}
 
 {% block footer %}
+
 <section class="flex form-section container">
         <h2 class="h2 red-text">Записаться на услугу</h2>
         <p class="nails-recomm-h ta-center">
@@ -55,6 +59,9 @@
                     id="phone"
                     placeholder="Телефон"
                     class="input-form"
+
+                    onkeypress="validate(event)"
+
             />
 <!--            <input-->
 <!--                    type="text"-->

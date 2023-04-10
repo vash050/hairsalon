@@ -32,13 +32,13 @@ class CategoryService(models.Model):
 
 
 class Service(models.Model):
-    name = models.CharField(max_length=100)
-    short_description = models.TextField(blank=True)
-    full_description = models.TextField(blank=True)
-    category_service = models.ForeignKey(to=CategoryService, on_delete=models.CASCADE)
-    price = models.DecimalField(max_digits=8, decimal_places=2, default=0.00)
-    duration = models.IntegerField(null=True)  # время на оказание услуги в минутах
-    is_active = models.BooleanField(default=True)
+    name = models.CharField(max_length=100, verbose_name='Наименование')
+    short_description = models.TextField(blank=True, verbose_name='Короткое описание')
+    full_description = models.TextField(blank=True, verbose_name='Полное описание')
+    category_service = models.ForeignKey(to=CategoryService, on_delete=models.CASCADE, verbose_name='Категория услуг')
+    price = models.DecimalField(max_digits=8, decimal_places=2, default=0.00, verbose_name="Стоимость")
+    duration = models.IntegerField(null=True, verbose_name="Время на оказание услуги", help_text='В минутах')  # время на оказание услуги в минутах
+    is_active = models.BooleanField(default=True, verbose_name="Предоставляется")
 
     class Meta:
         verbose_name = 'услуга'

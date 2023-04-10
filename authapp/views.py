@@ -1,6 +1,12 @@
 import requests
-from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.auth import update_session_auth_hash
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth.views import LoginView, LogoutView, PasswordContextMixin, FormView
 from django.shortcuts import render, HttpResponseRedirect
+from django.utils.decorators import method_decorator
+from django.views.decorators.csrf import csrf_protect
+from django.views.decorators.debug import sensitive_post_parameters
 from django.views.generic import TemplateView, UpdateView, DetailView, CreateView
 from .models import User
 from django.contrib import messages
@@ -52,9 +58,12 @@ class UserDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         try:
             user_services = UserService.objects.filter(user_id_id=self.request.user.pk)
-            context['user_services'] = user_services
+            if user_services:
+                context['user_services'] = user_services
+            else:
+                context['user_services'] = "Null"
         except Exception as ex:
-            context['user_services'] = ""
+            context['user_services'] = "Ошибка данных"
         return context
 
     def get_object(self, queryset=None):
@@ -63,5 +72,36 @@ class UserDetailView(DetailView):
     def get_success_url(self):
         return reverse_lazy('authapp:edit', args=[self.request.user.pk])
 
-    # def get_context_data(self, **kwargs):
-    #     print(self.request.user.pk)
+
+class PasswordChangeView(PasswordContextMixin, FormView):
+    form_class = PasswordChangeForm
+    success_url = reverse_lazy('authapp:password_change_done')
+    template_name = 'authapp/password_change_form.html'
+    title = 'Смена пароля'
+
+    @method_decorator(sensitive_post_parameters())
+    @method_decorator(csrf_protect)
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs['user'] = self.request.user
+        return kwargs
+
+    def form_valid(self, form):
+        form.save()
+        # Updating the password logs out all other sessions for the user
+        # except the current one.
+        update_session_auth_hash(self.request, form.user)
+        return super().form_valid(form)
+
+
+class PasswordChangeDoneView(PasswordContextMixin, TemplateView):
+    template_name = 'authapp/password_change_done.html'
+    title = 'Пароль успешно изменен'
+
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)

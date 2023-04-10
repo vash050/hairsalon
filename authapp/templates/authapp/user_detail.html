@@ -10,8 +10,8 @@
         <h3 class="h3 red-text">{{ object.email }}</h3>
         <br>
         <br>
-        {% if user_services == "" %}
-            <h3 class="h3 red-text">'Не оказывались услуги'</h3>
+        {% if user_services == "Null" %}
+            <h3 class="h3 red-text">Не оказывались услуги</h3>
         {% else %}
             <div class="flex price-row">
                 <div class="price-block left">Наименование</div>

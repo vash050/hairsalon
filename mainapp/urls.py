@@ -31,4 +31,4 @@ urlpatterns = [
     path('gallery/category/<int:pk>', mainapp.GalleryCategoryService.as_view(), name='gallery_category_service'),
     path('service', mainapp.ServiceCategoryPage.as_view(), name='service'),
     path('price', mainapp.price, name='price'),
-]
+ ]

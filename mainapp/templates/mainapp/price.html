@@ -23,61 +23,20 @@
                 <div class="price-block middle">Время</div>
                 <div class="price-block middle">Цена</div>
             </div>
+            {% for service in service_barbershop %}
             <div class="flex price-row">
-                <div class="price-block price-big left">Стрижка женская</div>
-                <div class="price-block middle red-text price-end">1-1,5 ч.</div>
-                <div class="price-block red-text price-end">от 900 р.</div>
+                <div class="price-block price-big left">{{ service }}</div>
+                {% if service.duration > 59 %}
+                <div class="price-block middle red-text price-end">{% widthratio service.duration 60.0 1 %} ч.</div>
+                {% else %}
+                <div class="price-block middle red-text price-end">менее 1 часа</div>
+                {% endif %}
+                <div class="price-block red-text price-end">от {{ service.price|floatformat:-2 }}р.</div>
             </div>
             <p class="price-small">
-                В услугу входит: мытье головы, стрижка, сушка с&nbsp;использованием
-                укладочных средств
+                В услугу входит: {{ service.short_description }}
             </p>
-            <div class="flex price-row">
-                <div class="price-block left">
-                    <p class="price-big left">Укладка</p>
-                </div>
-                <div class="price-block middle red-text price-end">от 30 мин.</div>
-                <div class="price-block red-text price-end">от 600 р.</div>
-            </div>
-            <p class="price-small">В услугу входит: мытье головы</p>
-            <div class="flex price-row">
-                <div class="price-block left">
-                    <p>Сложная укладка (стайлеп, щипцы)</p>
-                </div>
-                <div class="price-block right red-text price-end">от 800 р.</div>
-            </div>
-            <div class="flex price-row">
-                <div class="price-block price-big left">Прическа</div>
-                <div class="price-block red-text price-end">от 1500 р.</div>
-            </div>
-            <p class="price-small">В услугу входит: мытье головы</p>
-            <div class="flex price-row">
-                <div class="price-block left">
-                    <p class="price-big">Окрашивание волос</p>
-                </div>
-                <div class="price-block middle red-text price-end">от 1,5 ч.</div>
-                <div class="price-block red-text price-end">от 3000 р.</div>
-            </div>
-            <p class="price-small">
-                В услугу входит: мытье головы и сушка волос с&nbsp;использованием
-                укладочных средств
-            </p>
-            <div class="flex price-row">
-                <div class="price-block left">
-                    <p>Сложные виды окрашивания</p>
-                </div>
-                <div class="price-block right red-text price-end">от 5000 р.</div>
-            </div>
-            <div class="flex price-row">
-                <div class="price-block price-big left">
-                    Уход за волосами от Wella
-                </div>
-                <div class="price-block middle red-text price-end">1-1,5 ч.</div>
-                <div class="price-block red-text price-end">от 1300 р.</div>
-            </div>
-            <p class="price-small left">
-                В услугу входит: мытье головы, уход, укладка волос
-            </p>
+            {% endfor %}
         </div>
         <div id="nails" class="prices">
             <div class="price-table">
@@ -95,35 +54,27 @@
                     В услугу входит: маникюр, массаж кистей рук с&nbsp;использованием
                     масла для кутикулы
                 </p>
+                {% for service in service_manicure %}
                 <div class="flex price-row">
-                    <div class="price-block left">
-                        <p>Женский маникюр</p>
-                    </div>
-                    <div class="price-block middle red-text price-end">1-1,5 ч.</div>
-                    <div class="price-block red-text price-end">700 р.</div>
+                    <div class="price-block price-big left">{{ service }}</div>
+                    {% if service.duration > 59 %}
+                    <div class="price-block middle red-text price-end">{% widthratio service.duration 60.0 1 %} ч.</div>
+                    {% else %}
+                    <div class="price-block middle red-text price-end">менее 1 часа</div>
+                    {% endif %}
+                    <div class="price-block red-text price-end">от {{ service.price|floatformat:-2 }}р.</div>
                 </div>
-                <div class="flex price-row">
-                    <div class="price-block left">Мужской маникюр</div>
-                    <div class="price-block middle red-text price-end">1-1,5 ч.</div>
-                    <div class="price-block red-text price-end">700 р.</div>
-                </div>
-                <div class="flex price-row">
-                    <div class="price-block left">Детский маникюр</div>
-                    <div class="price-block middle red-text price-end">1-1,5 ч.</div>
-                    <div class="price-block red-text price-end">400 р.</div>
-                </div>
-                <div class="flex price-row">
-                    <div class="price-block price-big left">Покрытие гель-лак</div>
-                    <div class="price-block middle red-text price-end">1 ч.</div>
-                    <div class="price-block red-text price-end">800 р.</div>
-                </div>
+                {% if service.short_description %}
                 <p class="price-small">
-                    В услугу входит снятие старого покрытия гель-лак
+                    В услугу входит: {{ service.short_description }}
                 </p>
+                {% endif %}
+                {% if service.full_description %}
                 <p class="price-small red-text">
-                    Покрытие гель-лак без выполнения услуги маникюра
-                    Не&nbsp;выполняется!
+                    {{ service.full_description }}
                 </p>
+                {% endif %}
+                {% endfor %}
                 <div class="flex price-row">
                     <div class="price-block left">
                         <p class="price-big">Дизайн ногтей</p>
@@ -133,49 +84,40 @@
                     Возможность выполнения дизайна и стоимость обсуждаются индивидуально
                 </p>
                 <div class="flex price-row">
-                    <div class="price-block left">
-                        <p class="price-big">Маникюр с покрытием гель-лак</p>
-                    </div>
-                    <div class="price-block middle red-text price-end">2 ч.</div>
-                    <div class="price-block red-text price-end">1500 р.</div>
-                </div>
-                <div class="flex price-row">
                     <div class="price-block price-big left">Педикюр</div>
                 </div>
                 <p class="price-small">В услугу входит: педикюр, массаж стоп</p>
+                {% for service in service_pedicure %}
                 <div class="flex price-row">
-                    <div class="price-block left">
-                        <p>Женский и мужской</p>
-                    </div>
-                    <div class="price-block middle red-text price-end">1-1,5 ч.</div>
-                    <div class="price-block red-text price-end">1500 р.</div>
+                    <div class="price-block price-big left">{{ service }}</div>
+                    {% if service.duration > 59 %}
+                    <div class="price-block middle red-text price-end">{% widthratio service.duration 60.0 1 %} ч.</div>
+                    {% else %}
+                    <div class="price-block middle red-text price-end">менее 1 часа</div>
+                    {% endif %}
+                    <div class="price-block red-text price-end">от {{ service.price|floatformat:-2 }}р.</div>
                 </div>
-                <div class="flex price-row">
-                    <div class="price-block price-big left">
-                        Педикюр с покрытием гель-лак
-                    </div>
-                    <div class="price-block middle red-text price-end">2 ч.</div>
-                    <div class="price-block red-text price-end">2300 р.</div>
-                </div>
-                <div class="flex price-row">
-                    <div class="price-block price-big left">Экспресс педикюр</div>
-                    <div class="price-block middle red-text price-end"></div>
-                    <div class="price-block red-text price-end">1000 р.</div>
-                </div>
+                {% if service.short_description %}
                 <p class="price-small">
-                    В услугу входит: обработка пальчиков или стоп, массаж стоп
+                    В услугу входит: {{ service.short_description }}
                 </p>
-            </div>
-            <h3 class="red-text h3">Рекомендации по уходу</h3>
-            <div class="flex nails-recommedations">
-                <div>
-                    <p class="nails-recomm-h">Перед маникюром</p>
-                    <ul>
-                        <li class="recomm-list">
-                            за сутки не использовать масло для кутикулы
-                        </li>
-                        <li class="recomm-list">
-                            не обрезать самостоятельно кутикулу за 5 дней до маникюра
+                {% endif %}
+                {% if service.full_description %}
+                <p class="price-small red-text">
+                    {{ service.full_description }}
+                </p>
+                {% endif %}
+                {% endfor %}
+                <h3 class="red-text h3">Рекомендации по уходу</h3>
+                <div class="flex nails-recommedations">
+                    <div>
+                        <p class="nails-recomm-h">Перед маникюром</p>
+                        <ul>
+                            <li class="recomm-list">
+                                за сутки не использовать масло для кутикулы
+                            </li>
+                            <li class="recomm-list">
+                                не обрезать самостоятельно кутикулу за 5 дней до маникюра
                         </li>
                         <li class="recomm-list">
                             придание формы ногтям лучше доверить мастеру
@@ -199,8 +141,9 @@
                         <li class="recomm-list">не отрывать отслоившийся гель-лак</li>
                     </ul>
                 </div>
+                </div>
+                <h3 class="red-text h3">Красоты и здоровья вашим ноготочкам!</h3>
             </div>
-            <h3 class="red-text h3">Красоты и здоровья вашим ноготочкам!</h3>
         </div>
     </section>
 

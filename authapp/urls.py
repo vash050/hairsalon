@@ -13,9 +13,11 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+import authapp.views
 from authapp.apps import AuthappConfig
-from django.urls import path
-from authapp.views import CustomLoginView, RegisterView, LogoutView, UserEditView, UserDetailView
+from django.urls import path, include
+from authapp.views import CustomLoginView, RegisterView, LogoutView, UserEditView, UserDetailView, PasswordChangeView, \
+    PasswordChangeDoneView
 
 app_name = AuthappConfig.name
 
@@ -25,4 +27,6 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(), name='logout'),
     path('edit/<int:pk>/', UserEditView.as_view(), name='edit'),
     path('detail/<int:pk>/', UserDetailView.as_view(), name='user-detail'),
+    path('edit/password/', PasswordChangeView.as_view(), name='password_change'),
+    path('edit/password-change/done/', PasswordChangeDoneView.as_view(), name='password_change_done'),
 ]

@@ -67,7 +67,12 @@ def contacts(request):
 
 def price(request):
     title = 'price'
-    context = {"title": title, 'services': Service.objects.all()}
+    service_barbershop = Service.objects.filter(category_service__name__in=['Уход за волосами', 'Прически',
+                                                                            'Окрашивание', 'Стрижка'])
+    service_manicure = Service.objects.filter(category_service__name='Маникюр')
+    service_pedicure = Service.objects.filter(category_service__name='Педикюр')
+    context = {"title": title, 'service_barbershop': service_barbershop, 'service_manicure': service_manicure,
+               'service_pedicure': service_pedicure}
     return render(request, 'mainapp/price.html', context=context)
 
 

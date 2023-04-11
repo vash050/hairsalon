@@ -25,7 +25,7 @@
             </div>
             {% for service in service_barbershop %}
             <div class="flex price-row">
-                <div class="price-block price-big left">{{ service }}</div>
+                <div class="price-block price-big left">{{ service.name }}</div>
                 {% if service.duration > 59 %}
                 <div class="price-block middle red-text price-end">{% widthratio service.duration 60.0 1 %} ч.</div>
                 {% else %}
